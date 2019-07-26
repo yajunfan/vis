@@ -1,0 +1,133 @@
+
+<div>   
+    <div class="header">
+        <h2>Network介绍</h2>
+            <p>
+                网络是显示网络和由节点和边组成的网络的可视化。可视化易于使用，并支持自定义形状、样式、颜色、大小、图像等。网络可视化可以在任何现代浏览器上流畅地工作，
+                最多支持几千个节点和边。为了处理更多的节点，Network提供了集群支持。网络使用HTML画布进行渲染。<br>
+                从4.0开始，网络由处理网络特定部分的各个模块组成。这些模块有自己的文档、选项、方法和事件，您可以通过单击下面列表中的模块来访问它们。
+            </p> 
+    </div>
+    <div>
+        <h3>Network中包含的模块有哪些</h3>
+        <Collapse  v-model="value">
+            <Panel name="1">
+                <b> autoResize:true </b>
+                <p slot="content">【boolean】自动调整：默认为true，如果为true，网络将自动检测其容器的大小调整，并相应地重绘自身。如果为false，
+                    则可以在使用函数redraw（）和setSize（）调整其容器大小后强制网络重新绘制</p>
+            </Panel>
+            <Panel name="2">
+                <b>height:'100%'</b>
+                <p slot="content">【String】画布的高度，可以是百分比或像素，一般在dom元素上设置</p>
+            </Panel>
+            <Panel name="3">
+                <b>width:'100%'</b>
+                <p slot="content">【String】画布的宽度，可以是百分比或像素，一般在dom元素上设置</p>
+            </Panel>
+            <Panel name="4">
+                <b>locale:'en'</b> 
+                <p slot="content">【String】语言设置。默认为en。</p>
+            </Panel>
+            <Panel name="5">
+                <b>locales:{}</b>
+                <p slot="content">【Object】设置语言，默认有['en'(美式英语),'de'(德语),'es'(西班牙语),'it'(意大利),'nl'(英语),'pt-br'(葡萄牙语),'ru'(俄罗斯)]
+                    <ul>
+                   <li> <br>
+                            <div class="detail_box bddefault">
+                                <h4>自定义设置</h4>
+                                <span>var locales = {</span><br>
+                                <span class="mrl20">en ：{</span><br>
+                                <span class="mrl40">edit ：'编辑',</span><br>
+                                <span class="mrl40">del ：'Delete selected',</span><br>
+                                <span class="mrl40">back ：'后退',</span><br>
+                                <span class="mrl40">addNode ：'添加节点',</span><br>
+                                <span class="mrl40">addEdge ：'添加边',</span><br>
+                                <span class="mrl40"> editNode ：'编辑节点',</span><br>
+                                <span class="mrl40">editEdge ：'编辑Edge',</span><br>
+                                <span class="mrl40">addDescription ：'单击一个空白区域以放置一个新节点。',</span><br>
+                                <span class="mrl40">edgeDescription ：'单击节点并将边缘拖到另一个节点以连接它们。,</span><br>
+                                <span class="mrl40">editEdgeDescription ：'单击控制点并将它们拖到节点以连接到它。,</span><br>
+                                <span class="mrl40">createEdgeError ：'无法将边连接到集群。',</span><br>
+                                <span class="mrl40">deleteClusterError ：'无法删除集群。',</span><br>
+                                <span class="mrl40">editClusterError ：'无法编辑群集'。</span><br>
+                                <span class="mrl20">}</span> <br>
+                                } <br>
+                                <div class="example">
+                                    【  默认： 】<img  class="mrr20 bddefault" src="./images/network/localdefault.png" alt="默认文本">
+                                    【  自定义： 】<img class="bddefault" src="./images/network/localMyset.png" alt="自定义文本">
+                                </div>
+                            </div>
+                            
+                        </li>
+                        <li><b>width:'100%', </b> (【boolean】画布的宽度，可以是百分比或像素，一般在dom元素上设置)</li>
+                        <li><b>width:'100%', </b> (【boolean】画布的宽度，可以是百分比或像素，一般在dom元素上设置)</li>
+                        <li><b>width:'100%', </b> (【boolean】画布的宽度，可以是百分比或像素，一般在dom元素上设置)</li>
+                        <li><b>width:'100%', </b> (【boolean】画布的宽度，可以是百分比或像素，一般在dom元素上设置)</li>
+                        <li><b>width:'100%', </b> (【boolean】画布的宽度，可以是百分比或像素，一般在dom元素上设置)</li>
+                        <li><b>width:'100%', </b> (【boolean】画布的宽度，可以是百分比或像素，一般在dom元素上设置)</li>
+                        <li><b>width:'100%', </b> (【boolean】画布的宽度，可以是百分比或像素，一般在dom元素上设置)</li>
+                        <li><b>width:'100%', </b> (【boolean】画布的宽度，可以是百分比或像素，一般在dom元素上设置)</li>
+                    </ul>
+                </p>
+            </Panel>
+            <Panel name="6">
+                <b>clickToUse:false</b> 
+                <p slot="content">【boolean】它将仅在活动时对鼠标和触摸事件作出反应。激活时，网络周围会显示蓝色阴影边框。
+                    通过单击将网络设置为活动状态，然后通过单击网络外部或按ESC键再次将其更改为非活动状态。
+                    <div class="example"></div>
+                </p>
+            </Panel>
+            <Panel name="7">
+                <b>configure:{}</b> 
+                <p slot="content">【Object】
+                    <div class="example"></div>
+                </p>
+            </Panel>
+            <Panel name="8">
+                <b>edges:{}</b> 
+                <p slot="content">【Object】边的配置
+                    <div class="example"></div>
+                </p>
+            </Panel>
+            <Panel name="9">
+                <b>nodes:{}</b> 
+                <p slot="content">【Object】节点的配置
+                    <div class="example"></div>
+                </p>
+            </Panel>
+            <Panel name="10">
+                <b>groups:{}</b> 
+                <p slot="content">【Object】组的配置
+                    <div class="example"></div>
+                </p>
+            </Panel>
+            <Panel name="11">
+                <b>layout:{}</b> 
+                <p slot="content">【Object】布局
+                    <div class="example"></div>
+                </p>
+            </Panel>
+            <Panel name="12">
+                <b>interaction:{}</b> 
+                <p slot="content">【Object】相互作用
+                    <div class="example"></div>
+                </p>
+            </Panel>
+            <Panel name="13">
+                <b>manipulation:{}</b> 
+                <p slot="content">【Object】操作模块:包括 添加、删除、获取选中点、设置选中点、拖拽系列、点击等等
+                    <div class="example"></div>
+                </p>
+            </Panel>
+            <Panel name="14">
+                <b>physics:{}</b> 
+                <p slot="content">【Object】物理模块
+                    <div class="example"></div>
+                </p>
+            </Panel>
+
+        </Collapse>
+     
+    </div>
+</div>
+

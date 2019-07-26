@@ -1,0 +1,107 @@
+html,body {
+  height: 100%;
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  overflow:auto;
+  margin: 0px;
+  padding: 10px;
+}
+h1,h2,h3,h4,h5{
+  margin: 0px;
+}
+ul,li{
+  margin: 0px;
+  padding: 4px;
+  list-style: none;
+}
+span,i,b{
+  display: inline-block;
+}
+.letterspac2{
+  letter-spacing:2px;
+}
+.clear{
+  clear: both;
+}
+.mr20{
+  margin:20px;
+}
+.mrl10{
+  margin-left: 10px;
+}
+.mrl20{
+  margin-left: 20px;
+}
+.mrl40{
+  margin-left: 40px;
+}
+.mrr10{
+  margin-right: 10px;
+}
+.mrr20{
+  margin-right: 20px;
+}
+.mrb10{
+  margin-bottom: 10px;
+}
+.mrt10{
+  margin-top:10px;
+}
+.mr2{
+  margin:2px;
+}
+.pd10{
+  padding: 10px;
+  box-sizing: border-box;
+}
+.pdtb10{
+  padding: 10px 0;
+}
+.flr{
+  float: right;
+  margin-right: 10px;
+}
+.tc{
+  text-align: center;
+}
+.tr{
+  text-align: right;
+}
+.f16{
+  font-size: 16px;
+}
+.f18{
+  font-size: 18px;
+}
+.f22{
+  font-size: 22px;
+}
+.dib{
+  display: inline-block;
+}
+.pr{
+  position: relative;
+  height: 100%;
+}
+.pac{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.cptunder{
+  cursor: pointer;
+  text-decoration: underline;
+}
+.cp{
+  cursor: pointer;
+}
+.cred{
+  color: red;
+}
+.bddefault{
+  border: 1px solid black;
+}
+
+

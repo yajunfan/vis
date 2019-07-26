@@ -1,0 +1,20 @@
+<Layout style="height: 100%;">
+    <Sider ref="side1" hide-trigger collapsible :collapsed-width="78" v-model="isCollapsed">
+        <i-menu :active-name="nav_name" width="auto" :class="menuitemClasses" @on-select="selectMenu">
+            <menu-item>
+                <i class="iconfont sadb-home" style="font-size:26px;vertical-align: -webkit-baseline-middle;"></i>
+                <span style="display:inline-block;font-size: 20px;vertical-align: -webkit-baseline-middle;">VIS</span>
+            </menu-item>
+            <menu-item v-for="item in navlists" :key="item.id" :name="item.id">
+                <i :class="item.icon"  class="icon_left"></i>
+                <span v-text="item.name"></span>
+            </menu-item>
+        </i-menu>
+        
+    </Sider>
+    <Layout>
+        <Content :style="{margin: '10px', background: '#fff', minHeight: '260px'}">
+            <router-view/>   
+        </Content>
+    </Layout>
+</Layout>
