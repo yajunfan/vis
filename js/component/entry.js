@@ -1,6 +1,6 @@
 console.log(33435435)
 const Main = function(resolve, reject) {
-    $.get('../../../html/entry.html').then(function(res) { 
+    $.get('../../../components/entry.html').then(function(res) { 
         resolve({ // 这里是构造一个component
             template: res,
             data: function() {
