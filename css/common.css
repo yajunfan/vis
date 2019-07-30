@@ -4,6 +4,7 @@ html,body {
   overflow:auto;
   margin: 0px;
   padding: 10px;
+  font-size: 14px;
 }
 h1,h2,h3,h4,h5{
   margin: 0px;
@@ -33,6 +34,12 @@ span,i,b{
 }
 .mrl40{
   margin-left: 40px;
+}
+.mrl60{
+  margin-left: 60px;
+}
+.mrl80{
+  margin-left: 80px;
 }
 .mrr10{
   margin-right: 10px;
