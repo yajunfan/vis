@@ -6,7 +6,41 @@ const Network = function(resolve, reject) {
                 return{
                     value:1,
                     nodeData:[],
-                    nodeColumn:[],
+                    nodeColumn:[
+                        {
+                            type: 'expand',
+                            width: 50,
+                            render: (h, params) => {
+                                console.log(params)
+                                if(params.row.moredetail){
+                                    return h('div', [
+                                       h('span',{
+                                            domProps:{
+                                                innerHTML:params.row.moredetail
+                                            },
+                                            style:{
+                                                color:"red",
+                                                letterSpacing:"1px",
+                                                fontSize:"14px"
+                                            }
+                                       }),
+                                       h(expandRow,{
+                                            props:{
+                                                data:this.chosenNodeParams
+                                            },
+                                            style:{
+                                                display:params.row.name == 'chosen'?'block':'none'
+                                            }
+                                        })
+                                    ])
+                                }
+                            }
+                        },
+                        {key:"name", title:"名称" },
+                        {key:"type", title:"类型"},
+                        {key:"default",title:"默认值"},
+                        {key:"desc",title:"描述"}
+                    ],
                     edgeData:[],
                     edgeColumn:[],
                     chosenNodeParams:[  //chosen.node为函数的时候data
@@ -22,10 +56,7 @@ const Network = function(resolve, reject) {
                       {property:"shadowX",example:"见  node.shadow.x"}  ,
                       {property:"shadowY",example:"见  node.shadow.y"}  
                     ],
-                    chosenNodeColumn:[
-                        {key:"property", title:"属性" },
-                        {key:"example", title:"参考"}
-                    ],
+                   
                     chosenLabelParams:[  //chosen.node为函数的时候data
                         {property:"color",example:"见  node.font.color"},
                         {property:"size",example:"见  node.font.size"} ,
@@ -37,13 +68,28 @@ const Network = function(resolve, reject) {
                     ],
                 }
             },
-            methods: { 
+            components: { expandRow },
+            methods: {
+                //获取node的属性详情table列表
+                getNodeDetailFn(){
+                    let this_ = this;
+                    $.ajax({
+                        url:"../../../data/node.json",
+                        success:function(data){
+                            console.log(data)
+                            this_.nodeData = data;
+                        },
+                        error:function(){
+                            console.log(arguments)
+                        }
+                    })
+                } 
             },
             created() {
                
             },
             mounted: function() {
-                
+                this.getNodeDetailFn(); 
             }
         });
     })

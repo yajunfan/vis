@@ -1,4 +1,4 @@
-console.log(33435435)
+
 const Main = function(resolve, reject) {
     $.get('../../../../components/entry.html').then(function(res) { 
         resolve({ // 这里是构造一个component

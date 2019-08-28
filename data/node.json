@@ -22,25 +22,30 @@
         "type":"Object或者是Boolean",
         "default":true,
         "desc":"如果为true，则【选择或悬停】在节点上将根据默认值更改【它及其标签】的特征（如高亮的颜色等等），如果为false，则在【选择】节点时不会对【节点或其标签】进行更改。如果提供了对象，则在选择节点时可以更精细地调整节点和标签特征。",
-        "moredetail":"为对象的时候：{node:function/boolean,label:function/boolean}。<br>node:true,(选择或悬停在节点上将根据默认值更改其特征。如果为false，则在选择节点时不会对节点进行任何更改),lable同理"
+        "moredetail":"为对象的时候：{ node : function / boolean, label : function / boolean}。<br> node:true,(选择或悬停在节点上将根据默认值更改其特征。如果为false，则在选择节点时不会对节点进行任何更改),lable同理",
+        "moreDetailMOre":""
     },
     {
-        "name":"borderWidth",
-        "type":"Number",
-        "default":"1",
-        "desc":"节点的边框宽度"
+        "name":"color",
+        "type":"Object或者是String",
+        "default":"{}",
+        "desc":"color对象包含节点在每种情况下的颜色信息。具体包括属性下面表格见；<br>当type为string的时候，可以设置单一颜色，支持【rgba(120,32,14,1)】、【#ffffff】、red",
+        "moredetail":"color:{<br>border:String(未选中或悬停时节点边框的颜色（假设在交互模块中启用了悬停）),<br>background:String(同border)，<br>highlight：string(选中节点的颜色)/Object<br><span class='mrl20'>highlight:{border:String(选中节点的边框颜色),background:String(选中节点的背景色)}</span>,<br>hover:string(鼠标悬停节点上的颜色)/Object<br><span class='mrl20'>hover:{border:String,background:String}(假设启用了悬停)</span><br>}"
     },
     {
-        "name":"borderWidth",
-        "type":"Number",
-        "default":"1",
-        "desc":"节点的边框宽度"
+        "name":"fixed",
+        "type":"Object或者是Boolean",
+        "default":"Object:{x:false,y:false}",
+        "desc":"当该值为Boolean，且为true的时候，那节点固定，不可以移动",
+        "moredetail":"当该值为对象的时候，可以设定在x轴或者y轴的移动，设置为false，可以移动，设置为true，不可移动"
     },
     {
-        "name":"borderWidth",
-        "type":"Number",
-        "default":"1",
-        "desc":"节点的边框宽度"
+        "name":"font",
+        "type":"Object或者是String",
+        "default":"false",
+        "desc":"此对象定义标签的详细信息。表单中还支持简写（'size face color'），例如'14px arial red'",
+        "moredetail":"<span>font:{<br><span class='mrl20'>color:String,</span><br><span class='mrl20'>size:Number(14),</span><br><span class='mrl20'>face:String(默认是arial；同font-family),</span><br><span class='mrl20'>background:String（默认是undefined。标签后面用提供的颜色绘制一个背景矩形）,</span><br><span class='mrl20'>strokeWidth:Number（默认是0。作为背景矩形的另一种选择，可以围绕文本绘制边框。当提供大于0的值时，将绘制笔画）,</span><br><span class='mrl20'>strokeColor:String（当比划的值大于0，比划的颜色）,</span><br><span class='mrl20'>align:String（默认center，同text-align）,</span><br><span class='mrl20'>vadjust:String（默认0，垂直方向的字体的矫正，定位是down）,</span><br><span class='mrl20'>multi: Boolean or String（默认false，如果false，标签被视为使用基本字体绘制的纯文本。如果true或'html'标签可能是多面的，带有粗体，斜体和代码标记，则解释为html。如果值为'markdown'或者'md'标签可能是多面的，则使用粗体，斜体和代码标记，将其解释为markdown。粗体，斜体，粗体斜体和等宽字体可分别在font.bold，font.ital，font.boldital和font.mono属性下设置）,</span><br><span class='mrl20'>bold:Object/String(eg:'14px arial red')标签中粗体样式</span><br><span class='mrl40'>为Object：{</span><span class='mrl60'>color:String(默认是#343434)</span><br><span class='mrl60'>size:Number(默认是14)</span><br><span class='mrl60'>face:String(默认是arial，字体系列)</span><br><span class='mrl60'>mod:String(默认是bold)</span>}<br><span class='mrl60'>vadjust:String(默认是0，对标签文本中粗体斜体字体的垂直定位进行字体特定的校正。（正向下。）默认为基本字体的valign)</span><br><span class='mrl40'></span>}<br><span class='mrl20'>ital:同bold，标签中斜体样式</span><br><span class='mrl20'>boldital:同bold，标签中粗斜体样式</span><br><span class='mrl20'>mono:同bold，标签中等宽字体样式</span>"
+       
     },
     {
         "name":"borderWidth",
