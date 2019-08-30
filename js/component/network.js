@@ -11,7 +11,6 @@ const Network = function(resolve, reject) {
                             type: 'expand',
                             width: 50,
                             render: (h, params) => {
-                                console.log(params)
                                 if(params.row.moredetail){
                                     return h('div', [
                                        h('span',{
@@ -76,14 +75,24 @@ const Network = function(resolve, reject) {
                     $.ajax({
                         url:"../../../data/node.json",
                         success:function(data){
-                            console.log(data)
                             this_.nodeData = data;
                         },
                         error:function(){
                             console.log(arguments)
                         }
-                    })
-                } 
+                    });
+                    $.ajax({
+                        url:"../../../data/edge.json",
+                        success:function(data){
+                            console.log(data)
+                            this_.edgeData = data;
+                        },
+                        error:function(){
+                            console.log(arguments)
+                        }
+                    });
+                },
+
             },
             created() {
                

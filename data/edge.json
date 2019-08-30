@@ -3,20 +3,22 @@
         "name":"id",
         "type":"String",
         "default":"undefined",
-        "desc":"节点的id，唯一，且必须"
+        "desc":"边缘的id,可有可无，没有的时候，自动分配uuid"
     },
     {
-        "name":"borderWidth",
-        "type":"Number",
-        "default":"1",
-        "desc":"节点的边框宽度"
-    },
-    {
-        "name":"borderWidthSelected",
-        "type":"Number",
-        "default":"2",
+        "name":"arrows",
+        "type":"Boolean or String",
+        "default":"undefined",
         "desc":"选中节点的边框宽度"
     },
+    {
+        "name":"arrowStrikethrough",
+        "type":"Boolean",
+        "default":"true",
+        "desc":"如果为false，则边缘停在箭头处。如果您有粗线并且希望箭头以某点结束，则此选项非常有用。中箭头不受此影响；如果为true，那结束指向的箭头不一定是在最后一个点",
+        "moredetail":"设置为false<img src='../../../images/example/arrowsFalse.jpg'/> <span class='mrl60'>设置为true</span><img src='../../../images/example/arrowsTrue.jpg'/>"
+    },
+    
     {
         "name":"brokenImage",
         "type":"String",
@@ -28,8 +30,8 @@
         "type":"Object或者是Boolean",
         "default":true,
         "desc":"如果为true，则【选择或悬停】在节点上将根据默认值更改【它及其标签】的特征（如高亮的颜色等等），如果为false，则在【选择】节点时不会对【节点或其标签】进行更改。如果提供了对象，则在选择节点时可以更精细地调整节点和标签特征。",
-        "moredetail":"为对象的时候：{ node : function / boolean, label : function / boolean}。<br> node:true,(选择或悬停在节点上将根据默认值更改其特征。如果为false，则在选择节点时不会对节点进行任何更改),lable同理",
-        "moreDetailMOre":""
+        "moredetail":"为对象的时候：{ node : function / boolean, label : function / boolean}。<br> node:true,(选择或悬停在节点上将根据默认值更改其特征。如果为false，则在选择节点时不会对节点进行任何更改),lable同理"
+        
     },
     {
         "name":"color",
@@ -38,13 +40,7 @@
         "desc":"color对象包含节点在每种情况下的颜色信息。具体包括属性下面表格见；<br>当type为string的时候，可以设置单一颜色，支持【rgba(120,32,14,1)】、【#ffffff】、red",
         "moredetail":"color:{<br><span class='mrl20'>border:String(未选中或悬停时节点边框的颜色（假设在交互模块中启用了悬停）)</span><br><span class='mrl20'>background:String(同border)</span><br><span class='mrl20'>highlight：string(选中节点的颜色)/Object</span><br><span class='mrl40'>highlight:{border:String(选中节点的边框颜色),background:String(选中节点的背景色)}</span>,<br><span class='mrl20'>hover:string(鼠标悬停节点上的颜色)/Object</span><br><span class='mrl40'>hover:{border:String,background:String}(假设启用了悬停)</span><br>}"
     },
-    {
-        "name":"fixed",
-        "type":"Object或者是Boolean",
-        "default":"Object:{x:false,y:false}",
-        "desc":"当该值为Boolean，且为true的时候，那节点固定，不可以移动",
-        "moredetail":"当该值为对象的时候，可以设定在x轴或者y轴的移动，设置为false，可以移动，设置为true，不可移动"
-    },
+    
     {
         "name":"font",
         "type":"Object或者是String",

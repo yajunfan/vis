@@ -98,7 +98,129 @@
             <Panel name="8">
                 <b>edges:{}</b> 
                 <p slot="content"><span class="cred">【Object】边的配置</span>
-                    <div class="example"></div>
+                    <Tabs value="name1">
+                        <TabPane label="完整配置" name="name1">
+                            <span>edges:{</span><br>
+                            <span class="mrl20">arrows: {</span><br>
+                            <span class="mrl40">to  : { enabled :false ,scaleFactor :1, type :'arrow' },</span><br>
+                            <span class="mrl40">middle  :{ enabled ：false, scaleFactor :1 , type :'arrow' }，</span><br>  
+                            <span class="mrl40">from  :{ enabled ：false , scaleFactor :1, 类型 :'arrow' }</span><br>  
+                            <span class="mrl20">}</span><br>  
+                            <span class="mrl20">arrowStrikethrough: true,</span><br>  
+                            <span class="mrl20">chosen: true,</span><br>
+                            <span class="mrl20">color:{</span><br>  
+                            <span class="mrl40">color:'#848484',</span><br>
+                            <span class="mrl40">highlight:'#848484',</span><br>  
+                            <span class="mrl40">hover: '#848484',</span><br>  
+                            <span class="mrl40">inherit: 'from',</span><br>  
+                            <span class="mrl40">opacity:1.0</span><br>
+                            <span class="mrl20">},</span><br>  
+                            <span class="mrl20">dashes: false,</span><br>  
+                            <span class="mrl20"> font: {</span><br>  
+                            <span class="mrl40">color: '#343434',</span><br>  
+                            <span class="mrl40">size: 14, // px</span><br>  
+                            <span class="mrl40">face: 'arial',</span><br>  
+                            <span class="mrl40">background: 'none',</span><br>  
+                            <span class="mrl40">strokeWidth: 2, // px</span><br>
+                            <span class="mrl40">strokeColor: '#ffffff</span><br>
+                            <span class="mrl40">align: 'horizontal',</span><br>  
+                            <span class="mrl40">multi: false,</span><br>  
+                            <span class="mrl40">vadjust: 0,</span><br>  
+                            <span class="mrl40">bold: {</span><br>  
+                            <span class="mrl60">color: '#343434',</span><br>
+                            <span class="mrl60">size: 14, // px</span><br>
+                            <span class="mrl60">face: 'arial',</span><br>  
+                            <span class="mrl60">vadjust: 0,</span><br>  
+                            <span class="mrl60">mod: 'bold'</span><br>  
+                            <span class="mrl40">},</span><br>  
+                            <span class="mrl40">ital: {</span><br>  
+                            <span class="mrl60">color: '#343434',</span><br>
+                            <span class="mrl60">size: 14, // px</span><br>
+                            <span class="mrl60">face: 'arial',</span><br>  
+                            <span class="mrl60">vadjust: 0,</span><br>  
+                            <span class="mrl60">mod: 'italic',</span><br>  
+                            <span class="mrl40">},</span><br>  
+                            <span class="mrl40">boldital: {</span><br>  
+                            <span class="mrl60">color: '#343434',</span><br>
+                            <span class="mrl60">size: 14, // px</span><br>
+                            <span class="mrl60">face: 'arial',</span><br>  
+                            <span class="mrl60">vadjust: 0,</span><br>  
+                            <span class="mrl60">mod: 'bold italic'</span><br>
+                            <span class="mrl40">},</span><br>  
+                            <span class="mrl40">mono: {</span><br>  
+                            <span class="mrl60">color: '#343434',</span><br>
+                            <span class="mrl60">size: 15, // px</span><br>
+                            <span class="mrl60">face: 'courier new',</span><br>
+                            <span class="mrl60">vadjust: 2,</span><br>  
+                            <span class="mrl60">mod: ''</span><br>  
+                            <span class="mrl40">}</span><br>  
+                            <span class="mrl20">},</span><br>  
+                            <span class="mrl20"> hidden: false,</span><br>  
+                            <span class="mrl20"> group: undefined,</span><br>  
+                            <span class="mrl20"> heightConstraint: false,</span><br>
+                            <span class="mrl20"> hoverWidth:1.5,</span><br>  
+                            <span class="mrl20"> label: undefined,</span><br> 
+                            <span class="mrl20"> labelHighlightBold: true,</span><br>  
+                            <span class="mrl20"> length: undfined,</span><br>   
+                            <span class="mrl20"> physics: true,</span><br>  
+                            <span class="mrl20"> scaling: {</span><br>  
+                            <span class="mrl40">   min: 1,</span><br>  
+                            <span class="mrl40">   max: 15,</span><br>  
+                            <span class="mrl40">   label: {</span><br>  
+                            <span class="mrl60">     enabled: true,</span><br>  
+                            <span class="mrl60">     min: 14,</span><br>  
+                            <span class="mrl60">     max: 30,</span><br>  
+                            <span class="mrl60">     maxVisible: 30,</span><br>  
+                            <span class="mrl60">     drawThreshold: 5</span><br>  
+                            <span class="mrl40">   },</span><br>  
+                            <span class="mrl40">   customScalingFunction: function (min,max,total,value) {</span><br>  
+                            <span class="mrl60">     if (max === min) {</span><br>  
+                            <span class="mrl80">       return 0.5;</span><br>  
+                            <span class="mrl60">     }else {</span><br>   
+                            <span class="mrl80">       let scale = 1 / (max - min);</span><br>  
+                            <span class="mrl80">       return Math.max(0,(value - min)*scale);</span><br>  
+                            <span class="mrl60">     }</span><br>  
+                            <span class="mrl40">   }</span><br>  
+                            <span class="mrl20"> },</span><br>  
+                            <span class="mrl20"> selectionWidth: 1,</span><br>  
+                            <span class="mrl20"> selfReferenceSize:20,</span><br>  
+                            <span class="mrl20"> shadow:{</span><br>  
+                            <span class="mrl40">   enabled: false,</span><br>  
+                            <span class="mrl40">   color: 'rgba(0,0,0,0.5)',</span><br>  
+                            <span class="mrl40">   size:10,</span><br>  
+                            <span class="mrl40">   x:5,</span><br>  
+                            <span class="mrl40">   y:5</span><br>  
+                            <span class="mrl20"> },</span><br>  
+                            <span class="mrl20"> smooth:{</span><br>  
+                            <span class="mrl40">   enabled: true,</span><br>  
+                            <span class="mrl40">   type: "dynamic",</span><br>  
+                            <span class="mrl40">   roundness: 0.5</span><br>  
+                            <span class="mrl20"> },</span><br>  
+                            <span class="mrl20"> title: undefined,</span><br>  
+                            <span class="mrl20"> value: undefined,</span><br>  
+                            <span class="mrl20"> widthConstraint: false,</span><br>  
+                            <span class="mrl20"> width: 1,</span><br>  
+                        }
+                        </TabPane>
+                        <TabPane label="属性详情" name="name2">
+                            <Table :columns="nodeColumn" :data="edgeData"></Table>    
+                        </TabPane>
+                        <TabPane label="一般配置" name="name3">
+                            <span class="mrl20">var options = {</span> <br>
+                            <span class="mrl40">edges:{</span>     <br> 
+                            <span class="mrl60"> arrows: 'to, from',</span>      <br>
+                            <span class="mrl60"> color: 'red',</span>     <br> 
+                            <span class="mrl60"> font: '12px arial #ff0000',</span>     <br> 
+                            <span class="mrl60"> scaling:{</span>    <br>   
+                            <span class="mrl80"> label: true</span>   <br>     
+                            <span class="mrl60"> },</span>      <br>
+                            <span class="mrl60"> shadow: true</span>    <br> 
+                            <span class="mrl60"> smooth: true</span>    <br> 
+                            <span class="mrl40"> }</span>   <br>
+                            <span class="mrl20"> }</span>  <br>
+                            <span class="mrl20"> network.setOptions(options);</span>   
+                        </TabPane>
+                    </Tabs>   
                 </p>
             </Panel>
             <Panel name="9">
@@ -226,7 +348,20 @@
                         <TabPane label="属性详情" name="name2">
                             <Table :columns="nodeColumn" :data="nodeData"></Table>    
                         </TabPane>
-                        <TabPane label="一般配置" name="name3">标签三的内容</TabPane>
+                        <TabPane label="一般配置" name="name3">
+                            <span class="mrl20">var options = {</span> <br>
+                            <span class="mrl40">nodes:{</span>     <br> 
+                            <span class="mrl60"> color: '#ff0000',</span>      <br>
+                            <span class="mrl60"> fixed: false,</span>     <br> 
+                            <span class="mrl60"> font: '12px arial red',</span>     <br> 
+                            <span class="mrl60"> scaling:{</span>    <br>   
+                            <span class="mrl80"> label: true</span>   <br>     
+                            <span class="mrl60"> },</span>      <br>
+                            <span class="mrl60">   shadow: true</span>    <br> 
+                            <span class="mrl40"> }</span>   <br>
+                            <span class="mrl20"> }</span>  <br>
+                            <span class="mrl20"> network.setOptions(options);</span>   
+                        </TabPane>
                     </Tabs>
                         
                     <div class="example"></div>
