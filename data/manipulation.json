@@ -1,0 +1,65 @@
+[
+    {
+        "name":"enabled",
+        "type":"Boolean",
+        "default":"false",
+        "desc":"打开或关闭操纵系统。即使是假的，通过方法的操作API仍然可以工作。此属性是可选的。如果您定义以下任何选项并且未定义enabled，则将设置为true。",
+        "moredetail":"<img src='../../../images/example/edit.jpg'><br>点击之后<br><img src='../../../images/example/edit2.jpg'>"
+    },
+    {
+        "name":"initiallyActive",
+        "type":"Boolean",
+        "default":"true",
+        "desc":"最初是否只显示编辑按钮。",
+        "moredetail":"为true的时候，初始默认是<img src='../../../images/example/edit2.jpg'><br>为false的时候，初始默认是<img src='../../../images/example/edit.jpg'>"
+    },
+    {
+        "name":"addNode",
+        "type":"Boolean or Function",
+        "default":"true",
+        "desc":"为Boolean的时候，true和false表示【添加节点】按钮是否展示；为function的时候，自定义的添加节点",
+        "moredetail":"addNode：function（nodeData，callback）{<br><span class='mrl20'> var id='1234'//自定义id;</span><br><span class='mrl20'>var newObj={</span><br><span class='mrl40'> id:id, label:'I'm new!',x:nodeData.x,y:nodeData.y,group:1,level:1,value:24}(<b class='colorblack'>id必须，其他非必须</b>);</span><br><span class='mrl40'>nodes.add(newObj);(这里var nodes = new vis.DataSet(nodesArray);)</span><br><span class='mrl20'>}</span></br><span>}</span><br>这里注意要手动的给自己的node数组中push进去"
+    },
+    {
+        "name":"addEdge",
+        "type":"Boolean or Function",
+        "default":"true",
+        "desc":"为Boolean的时候，true和false表示【添加边缘】按钮是否展示；为function的时候，对添加边缘的自定义处理，一般是将添加边缘的按钮展示，当点击之后，才能进入这个函数",
+        "moredetail":"addEdge：function(edgeData,callback）{<br><span class='mrl20'> callback(edgeData);</span><br>}<br>在函数里可以自己加自己的判断等等，但是必须要执行【回调函数】,如果不调用的话，就不会绘制边<br>如果您将节点连接到自身以询问您是否是您想要的。在函数中写 if (edgeData.from === edgeData.to){var r = confirm('你想将节点连接到自身吗？'};if (r === true) {callback(edgeData);}"
+    },
+    {
+        "name":"editNode",
+        "type":"Function",
+        "default":"undefined",
+        "desc":"只有当使用编辑栏中的编辑节点的时候，才会调用这个函数，函数参考 addNode",
+        "moredetail":"只有将这个属性写在option中，才会在点击节点的时候，出现编辑节点的按钮,可以在这个函数中写相关的操作，一般是调用nodes.update()方法，进行更新节点"
+    },
+    {
+        "name":"editEdge",
+        "type":"Boolean or Function",
+        "default":"true",
+        "desc":"启用后，true和false表示【编辑边缘】按钮是否展示；参考addEdge函数",
+        "moredetail":"点击后，会将选中的边缘出现两个点，可以随意拖动边缘，指向任何一个节点。如果不指定回调函数，就不会绘制边缘"
+    },
+    {
+        "name":"deleteNode",
+        "type":"Boolean or Function",
+        "default":"true",
+        "desc":"启用后，true和false表示【删除节点】按钮是否展示；",
+        "moredetail":"删除的时候，会删除选中的一个节点或者一堆节点，并且会删除与之关联的边线<br>为函数的时候，参考addNode中的函数"
+    },
+    {
+        "name":"deleteEdge",
+        "type":"Boolean",
+        "default":"true",
+        "desc":"启用后，true和false表示【删除边缘】按钮是否展示；",
+        "moredetail":"删除的时候，会删除选中的一个边或者一堆边，参考addEdge中的函数"
+    },
+    {
+        "name":"controlNodeStyle",
+        "type":"Boolean or Object",
+        "default":"Object",
+        "desc":"提供任何想要的节点的样式，node对象中的属性都可以在这里设置，除了id,fixed,x,y这几个不可以使用",
+        "moredetail":"使用了没有效果，有待继续测试<br>controlNodeStyle:{<br><span class='mrl20'>shape:'dot',</span><br><span class='mrl20'>size:6,</span><br><span class='mrl20'>borderWidth: 2,</span><br><span class='mrl20'>borderWidthSelected: 2,</span><br>}<br>参考node对象"
+    }
+]

@@ -1,0 +1,73 @@
+[
+    {
+        "name":"enabled",
+        "type":"Boolean",
+        "default":"true",
+        "desc":"打开或关闭物理系统。此属性是可选的。如果您定义以下任何选项并且未定义enabled，则将设置为true"
+    },
+    {
+        "name":"barnesHut",
+        "type":"Object",
+        "default":"Object",
+        "desc":"BarnesHut是一个基于四叉树的引力模型。这是非分层布局的最快，默认和推荐的解算器。",
+        "moredetail":"barnesHut:{<br><span class='mrl20'><i class='colorblack'>gravitationalConstant:Number,</i>(默认-2000,重力吸引。我们想要排斥。所以value为负值。如果你想要排斥更强，减少值，如-10000)</span><br><span class='mrl20'><i class='colorblack'>centralGravity:Number,</i>(默认是0.3，中心重力吸引器将整个网络拉回中心,值越大，节点越近，太大的话，布局会很难稳定下来，当>5的时候，就开始弹动停不下来)</span><br><span class='mrl20'><i class='colorblack'>springLength:Number,</i>(默认是95，边缘被建模为弹簧。拉拽之后回弹的长度，且值越大，弹力越大，联动性也越大)</span><br><span class='mrl20'><i class='colorblack'>springConstant:Number,</i>(默认是0.04，弹性的固性，值越高意味着弹簧越强。测试时，当值>3.1，开始停不下来的弹动)</span><br><span class='mrl20'><i class='colorblack'>damping:Number,</i>(默认是0.09，范围是0~1，阻尼因子，值越大，阻力越大)</span><br><span class='mrl20'><i class='colorblack'>avoidOverlap:Number,</i>(默认是0，范围是0~1，当大于0时，将考虑节点的大小。对于重力模型，距离将根据节点的包围圆的半径计算。值1是最大重叠避免)</span><br>}"
+    },
+    {
+        "name":"forceAtlas2Based",
+        "type":"Object",
+        "default":"Object",
+        "desc":"forceAtlas2Based求解器利用它们提供的一些方程，并利用vis中的barnesHut实现。主要区别在于中心引力模型，这里与距离无关，而排斥是线性的而不是二次的。最后，所有节点质量都具有基于连接边数加1的乘数。",
+        "moredetail":"forceAtlas2Based:{<br><span class='mrl20'><i class='colorblack'>gravitationalConstant:Number,</i>(默认-50，这类似于barnesHut方法，除了衰减是线性的而不是二次的,想要排斥更强，减少值,如-10000)</span><br><span class='mrl20'><i class='colorblack'>centralGravity:Number,</i>(默认是0.01，同barnesHut)</span><br><span class='mrl20'><i class='colorblack'>springLength:Number,</i>(默认是100，同barnesHut)</span><br><span class='mrl20'><i class='colorblack'>springConstant:Number,</i>(默认是0.08，，同barnesHut)</span><br><span class='mrl20'><i class='colorblack'>damping:Number,</i>(默认是0.4，同barnesHut)</span><br><span class='mrl20'><i class='colorblack'>avoidOverlap:Number,</i>(默认是0，同barnesHut)</span><br>}"
+    },
+    {
+        "name":"repulsion",
+        "type":"Object",
+        "default":"Object",
+        "desc":"排斥模型假定节点周围具有简化的排斥场。它的力从1（在0.5 * nodeDistance和更小）处线性减小到0（在2 * nodeDistance处）。",
+        "moredetail":"repulsion:{<br><span class='mrl20'><i class='colorblack'>nodeDistance:Number,</i>(默认100，排斥的影响范围)</span><br><span class='mrl20'><i class='colorblack'>centralGravity:Number,</i>(默认是0.01，同barnesHut)</span><br><span class='mrl20'><i class='colorblack'>springLength:Number,</i>(默认是100，同barnesHut)</span><br><span class='mrl20'><i class='colorblack'>springConstant:Number,</i>(默认是0.08，，同barnesHut)</span><br><span class='mrl20'><i class='colorblack'>damping:Number,</i>(默认是0.4，同barnesHut)</span><br>}"
+    },
+    {
+        "name":"hierarchicalRepulsion",
+        "type":"Object",
+        "default":"Object",
+        "desc":"该模型基于排斥求解器，但是考虑了水平并且力被归一化。",
+        "moredetail":"hierarchicalRepulsion:{<br><span class='mrl20'><i class='colorblack'>nodeDistance:Number,</i>(默认120，同repulsion)</span><br><span class='mrl20'><i class='colorblack'>centralGravity:Number,</i>(默认是0.01，同barnesHut)</span><br><span class='mrl20'><i class='colorblack'>springLength:Number,</i>(默认是100，同barnesHut)</span><br><span class='mrl20'><i class='colorblack'>springConstant:Number,</i>(默认是0.08，，同barnesHut)</span><br><span class='mrl20'><i class='colorblack'>damping:Number,</i>(默认是0.4，同barnesHut)</span><br>}"
+    },
+    {
+        "name":"maxVelocity",
+        "type":"Number",
+        "default":"50",
+        "desc":"物理模块限制节点的最大速度以增加稳定时间。这是最大值。"
+    },
+    {
+        "name":"minVelocity",
+        "type":"Number",
+        "default":"0.1",
+        "desc":"一旦达到所有节点的最小速度，我们假设网络已经稳定并且模拟停止。"
+    },
+    {
+        "name":"solver",
+        "type":"String",
+        "default":"barnesHut",
+        "desc":"您可以选择自己的求解器。可能的选择：'barnesHut', 'repulsion', 'hierarchicalRepulsion', 'forceAtlas2Based'。设置分层布局时，无论您在此处填写什么，都会自动选择分层排斥求解器。"
+    },
+    {
+        "name":"timestep",
+        "type":"Number",
+        "default":"0.5",
+        "desc":"物理模拟是离散的。这意味着我们采取步骤，计算力，移动节点并采取另一个步骤。如果增加此数字，步骤将会过大，网络可能会变得不稳定。如果您在网络中看到很多抖动，您可能希望稍微降低此值。" 
+    },
+    {
+        "name":"stabilization",
+        "type":"Boolean or Object",
+        "default":"Object",
+        "desc":"如果为true，则使用默认设置在加载时稳定网络。如果为false，则禁用稳定。",
+        "moredetail":"stabilization:{<br><span class='mrl20'><i class='colorblack'>enabled:Boolean,</i>(默认是true，如果未定义，则在定义此对象的任何属性时，它将自动设置为true)</span><br><span class='mrl20'><i class='colorblack'>iterations:Number,</i>(默认是1000，物理模块尝试在加载时稳定网络，直到此处定义的最大迭代次数。如果网络稳定性较低，则在最大数量之前完成)</span><br><span class='mrl20'><i class='colorblack'>updateInterval:Number,</i>(默认是50，稳定后，DOM可以冻结。您可以将稳定性切成碎片以显示加载条。间隔在stabilizationProgress触发事件的迭代次数后确定)</span><br><span class='mrl20'><i class='colorblack'>onlyDynamicEdges:Boolean,</i>(默认是false，，如果已预定义所有节点的位置，并且只想稳定动态平滑边，请将其设置为true。除了不可见的动态平滑曲线支持节点外，它冻结所有节点。如果您希望可见节点移动并稳定，请不要使用它)</span><br><span class='mrl20'><i class='colorblack'>fit:Boolean</i>(默认是true，在稳定完成时切换是否希望视图缩放以适​​合所有节点。)</span><br>}<br>根据这里【iterations】和【updateInterval:Number(那进度条每次前进的步数，值越小进度加载效果越明显)】设置的值<br><img src='../../../images/example/stabilization.jpg'><img src='../../../images/example/loading1.jpg'><img src='../../../images/example/loading2.jpg'>"
+    },
+    {
+        "name":"adaptiveTimestep",
+        "type":"Boolean",
+        "default":"true",
+        "desc":"如果启用此选项，将智能地调整时间步长（仅在稳定阶段，如果启用稳定stabilization！）以大大减少稳定时间。上面配置的时间步长被视为最小时间步长。通过使用ImprovedLayout算法可以进一步改善这一点。" 
+    }
+]

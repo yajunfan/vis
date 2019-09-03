@@ -4,10 +4,10 @@ const routes = [
       name:"Main",
       component: Main,
       redirect: {
-        name: 'network'
+        name: 'module'
       },
       children:[
-        { path: '/network',name:"network",component: Network }
+        { path: '/module',name:"module",component: Module }
       ]    
     },
     

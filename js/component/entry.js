@@ -9,8 +9,18 @@ const Main = function(resolve, reject) {
                     isCollapsed: false, // 左边模块的菜单的收缩控制  entry.js
                     navlists: [ //导航列表
                         {
-                            id: 'network',
-                            name: "network",
+                            id: 'module',
+                            name: "配置module",
+                            icon: "iconfont sadb-dashboard",
+                        },
+                        {
+                            id: 'content',
+                            name: "配置module",
+                            icon: "iconfont sadb-dashboard",
+                        },
+                        {
+                            id: 'Event',
+                            name: "事件",
                             icon: "iconfont sadb-dashboard",
                         }
                     ]

@@ -1,0 +1,21 @@
+[
+    {
+        "name":"randomSeed",
+        "type":"Number",
+        "default":"undefined",
+        "desc":"当不使用分层布局时，节点最初是随机定位的。这意味着每次结算结果都不同。如果手动提供randomSeed，则每次布局都相同。我们可以重复刷新页面，获取到满意的布局，通过network.getSeed()方法获取到该值，然后手动赋值"
+    },
+    {
+        "name":"improvedLayout",
+        "type":"Boolean",
+        "default":"true",
+        "desc":"启用后，网络将使用Kamada Kawai算法进行初始布局。对于大于100个节点的network，将自动执行【群集】以减少节点数量。这可以大大改善稳定时间。如果网络非常互连（没有或很少叶子节点），这可能不起作用，它将恢复为旧方法。"
+    },
+    {
+        "name":"hierarchical",
+        "type":"Boolean or Object",
+        "default":"Object",
+        "desc":"如果为true，则布局引擎使用默认设置以分层方式定位节点。想要自定义的话，使用对象；",
+        "moredetail":"hierarchical:{<br><span class='mrl20'><i class='colorblack'>enabled:Booelan,</i>(默认是false,对象中的其他任何属性定义了，都会将其设置为true),</span><br><span class='mrl20'><i class='colorblack'>levelSeparation:Number,</i>(默认是150，不同层次之间的距离),</span><br><span class='mrl20'><i class='colorblack'>nodeSpacing:Number</i>(默认是100，自由轴上节点之间的最小距离。这仅适用于初始布局。如果启用physics，那么节点距离将是有效节点距离。),</span><br><span class='mrl20'><i class='colorblack'>treeSpacing:Number,</i>(默认是200，不同树木之间的距离（独立网络）。这仅适用于初始布局。如果启用物理，则树之间的距离根据排斥力来获取),</span><br><span class='mrl20'><i class='colorblack'>blockShifting:Boolean,</i>(默认是true,减少空白的方法。可以单独使用，也可以与edgeMinimization一起使用。每个节点都会检查空格，并尽可能地将它的分支与它一起移动，尊重任何级别的nodeSpacing。这主要是为了初始布局。如果启用物理，它们的布局将由物理学决定。这将大大加快稳定时间！),</span><br><span class='mrl20'><i class='colorblack'>edgeMinimization:Boolean,</i>（默认是true，减少空白的方法，可单独，也可和blockShifting一起使用，启用blockShifting通常会加快布局过程。每个节点将尝试沿其自由轴移动以减少其边缘的总长度。这主要是为了初始布局。如果启用物理，它们的布局将由物理学决定。这将大大加快稳定时间）,</span><br><span class='mrl20'><i class='colorblack'>parentCentralization：Boolean,</i>（默认是true，如果为true，则在布局算法完成后，父节点将再次居中。）,</span><br><span class='mrl20'><i class='colorblack'>direction：String,</i>（默认是'UP',可选项有UD(父上子下), DU（父下子上）, LR（父左子右）, RL（父右子左））,</span><br><span class='mrl20'><i class='colorblack'>sortMethod：String</i>（默认是hubsize，该算法用于根据数据确定节点的级别。【 可选项：hubsize, directed 】。Hubsize采用边缘最多（关联关系最多）的节点并将它们放在顶部。由此评估层次结构的其余部分。 Directed遵循边缘的数据。A - > B所以B是低于A的水平。）</span><br>}<br><img src='../../../images/example/layout.jpg'>"
+    }
+]

@@ -98,7 +98,7 @@
             <Panel name="8">
                 <b>edges:{}</b> 
                 <p slot="content"><span class="cred">【Object】边的配置</span>
-                    <Tabs value="name1">
+                    <Tabs value="name1" @on-click="getEdgeDetailFn">
                         <TabPane label="完整配置" name="name1">
                             <span>edges:{</span><br>
                             <span class="mrl20">arrows: {</span><br>
@@ -226,7 +226,7 @@
             <Panel name="9">
                 <b>nodes:{}</b> 
                 <div slot="content">【Object】节点的配置
-                    <Tabs value="name1">
+                    <Tabs value="name1" @on-click="getNodeDetailFn">
                         <TabPane label="完整配置" name="name1">
                             <span>nodes:{</span><br>
                                 <span class="mrl20"> borderWidth: 1,(边框的宽度，默认是1，一般无需配置)</span><br>
@@ -363,39 +363,215 @@
                             <span class="mrl20"> network.setOptions(options);</span>   
                         </TabPane>
                     </Tabs>
-                        
-                    <div class="example"></div>
                 </div>
             </Panel>
             <Panel name="10">
                 <b>groups:{}</b> 
-                <p slot="content">【Object】组的配置
-                    <div class="example"></div>
-                </p>
+                <div slot="content">【Object】组的配置
+                    <div class="example">
+                        <p>这里实际上是自定义的组的设置</p>
+                        例如：<br>
+                        <Row>
+                            <Col span="12">
+                                var nodes = [{id: 0, label: "0", group: 'diamonds'},{id: 0, label: "0", group: 'icons'},{id: 0, label: "0", group: 'dotsWithLabel'}]<br>
+                                var option={<br>
+                                    <span class='mrl20'>useDefaultGroups ：true ,(如果有的节点没有分组，就会默认的循环已有的组进行分配，要是都分配完了，在回到第一个分配，如果设置为false，就不在此循环中分配默认组)</span><br>
+                                    <span class='mrl20'>groups:{</span><br>
+                                    <span class='mrl40'>diamonds:{</span><br>
+                                    <span class='mrl60'>color:{background:'red',border:'white'},</span><br>
+                                    <span class='mrl60'>shape: 'diamond'</span><br>
+                                    <span class='mrl40'>}</span><br>
+                                    <span class='mrl40'>icons:{</span><br>
+                                    <span class='mrl60'>icon:{face: 'FontAwesome',code: '\uf0c0',size: 50,color: 'orange'},</span><br>
+                                    <span class='mrl60'>shape: 'icon'</span><br>
+                                    <span class='mrl40'>}</span><br>
+                                    <span class='mrl40'>dotsWithLabel:{</span><br>
+                                    <span class='mrl60'> label: "I'm a dot!",</span><br>
+                                    <span class='mrl60'>shape: 'dot',</span><br>
+                                    <span class='mrl60'>color: 'cyan'</span><br>
+                                    <span class='mrl40'>}</span><br>
+                                    <span class='mrl20'>}</span><br>
+
+                                }<br>
+                            </Col>
+                            <Col span="12">
+                                <img src="../images/example/groups.jpg"  style="float: right;">
+                            </Col>
+                        </Row>
+                        
+                        
+                    </div>
+                </div>
             </Panel>
             <Panel name="11">
                 <b>layout:{}</b> 
-                <p slot="content">【Object】布局
-                    <div class="example"></div>
-                </p>
+                <div slot="content">【Object】布局
+                    <Tabs value="name1" @on-click="getLayoutFn">
+                        <TabPane label="完整配置" name="name1">
+                            <span>layout:{</span><br>
+                            <span class="mrl20"> randomSeed: undefined</span><br>
+                            <span class="mrl20"> improvedLayout:true</span><br>
+                            <span class="mrl20">hierarchical: {</span><br>  
+                            <span class="mrl40">border: '#2B7CE9',</span><br>  
+                            <span class="mrl40">background: '#97C2FC'</span><br>
+                            <span class="mrl40">highlight: {</span><br>  
+                            <span class="mrl60">enabled:false,</span><br>  
+                            <span class="mrl60">levelSeparation: 150,</span><br>
+                            <span class="mrl60">nodeSpacing: 100,</span><br>
+                            <span class="mrl60">treeSpacing: 200,</span><br>
+                            <span class="mrl60">blockShifting: true,</span><br>
+                            <span class="mrl60">edgeMinimization: true,</span><br>
+                            <span class="mrl60">parentCentralization: true,</span><br>
+                            <span class="mrl60">direction: 'UD', ( 可选：UD, DU, LR, RL)</span><br>
+                            <span class="mrl60">sortMethod: 'hubsize' ( 可选：hubsize, directed )</span><br>
+                            <span class="mrl40">}</span><br>  
+                            }
+                        </TabPane>
+                        <TabPane label="属性详情" name="name2">
+                            <Table :columns="nodeColumn" :data="layoutData"></Table>    
+                        </TabPane>
+                        <TabPane label="一般配置" name="name3">
+                            <span class="mrl20">var options = {</span> <br>
+                            <span class="mrl40">layout:{</span>     <br> 
+                            <span class="mrl60">hierarchical: true</span><br>
+                            <span class="mrl40"> }</span>   <br>
+                            <span class="mrl20"> }</span>  <br>
+                            <span class="mrl20"> network.setOptions(options);</span>   
+                        </TabPane>
+                    </Tabs>
+                </div>
             </Panel>
             <Panel name="12">
                 <b>interaction:{}</b> 
-                <p slot="content">【Object】相互作用
-                    <div class="example"></div>
-                </p>
+                <div slot="content">【Object】交互 用于所有用户与网络的交互。处理鼠标和触摸事件以及导航按钮和弹出窗口。
+                    <Tabs value="name1" @on-click="getInteractionFn">
+                        <TabPane label="完整配置" name="name1">
+                            <span>interaction:{</span><br>
+                            <span class="mrl20"> dragNodes ：true ,</span><br>
+                            <span class="mrl20"> dragView ：true,</span><br>
+                            <span class="mrl20"> hideEdgesOnDrag ：false ,</span><br>
+                            <span class="mrl20"> hideEdgesOnZoom ：false,</span><br>
+                            <span class="mrl20"> hideNodesOnDrag ：false,</span><br>
+                            <span class="mrl20"> hover ：false,</span><br>
+                            <span class="mrl20"> multiselect: false,</span><br>
+                            <span class="mrl20"> navigationButtons: false,</span><br>
+                            <span class="mrl20"> selectable: true,</span><br>
+                            <span class="mrl20"> selectConnectedEdges: true,</span><br>
+                            <span class="mrl20"> tooltipDelay: 300,</span><br>
+                            <span class="mrl20"> zoomView: true,</span><br>
+                            <span class="mrl20">keyboard:{</span><br>  
+                            <span class="mrl40">enabled: false,</span><br>  
+                            <span class="mrl40">speed: {x: 10, y: 10, zoom: 0.02},</span><br>
+                            <span class="mrl40">bindToWindow: true</span><br>
+                            <span class="mrl20">}</span><br>  
+                            }
+                        </TabPane>
+                        <TabPane label="属性详情" name="name2">
+                            <Table :columns="nodeColumn" :data="interactionData"></Table>    
+                        </TabPane>
+                        <TabPane label="一般配置" name="name3">
+                            <span class="mrl20">var options = {</span> <br>
+                            <span class="mrl40">interaction: false</span><br>
+                            <span class="mrl20"> }</span>  <br>
+                            <span class="mrl20"> network.setOptions(options);</span>   
+                        </TabPane>
+                    </Tabs>
+                </div>
             </Panel>
             <Panel name="13">
                 <b>manipulation:{}</b> 
-                <p slot="content">【Object】操作模块:包括 添加、删除、获取选中点、设置选中点、拖拽系列、点击等等
-                    <div class="example"></div>
-                </p>
+                <div slot="content">【Object】操作模块:包括 添加、删除、获取选中点、设置选中点、拖拽系列、点击等等
+                    <Tabs value="name1" @on-click="getManipulationFn">
+                        <TabPane label="完整配置" name="name1">
+                            <span>manipulation:{</span><br>
+                            <span class="mrl20"> enabled false ,</span><br>
+                            <span class="mrl20"> initiallyActive false,</span><br>
+                            <span class="mrl20"> addNode :true ,</span><br>
+                            <span class="mrl20"> addEdge true,</span><br>
+                            <span class="mrl20"> editNode undefined,</span><br>
+                            <span class="mrl20"> editEdge :true,</span><br>
+                            <span class="mrl20"> deleteNode: true,</span><br>
+                            <span class="mrl20"> deleteEdge: true,</span><br>
+                            <span class="mrl20">controlNodeStyle:{</span><br>  
+                            <span class="mrl20">}</span><br>  
+                            }
+                        </TabPane>
+                        <TabPane label="属性详情" name="name2">
+                            <Table :columns="nodeColumn" :data="manipulationData"></Table>    
+                        </TabPane>
+                        <TabPane label="一般配置" name="name3">
+                            <span class="mrl20">var options = {</span> <br>
+                            <span class="mrl40">manipulation: false</span><br>
+                            <span class="mrl20"> }</span>  <br>
+                            <span class="mrl20"> network.setOptions(options);</span>   
+                        </TabPane>
+                    </Tabs>
+                </div>
             </Panel>
             <Panel name="14">
                 <b>physics:{}</b> 
-                <p slot="content">【Object】物理模块
-                    <div class="example"></div>
-                </p>
+                <div slot="content">【Object】物理模块
+                    <Tabs value="name1" @on-click="getPhysicsFn">
+                        <TabPane label="完整配置" name="name1">
+                            <span>physics:{</span><br>
+                            <span class="mrl20"> enabled :true ,</span><br>
+                            <span class="mrl20"> barnesHut :{</span><br>
+                            <span class="mrl40"> gravitationalConstant: -2000,</span><br>
+                            <span class="mrl40"> centralGravity: 0.3,</span><br>
+                            <span class="mrl40"> springLength: 95,</span><br>
+                            <span class="mrl40"> springConstant: 0.04,</span><br>
+                            <span class="mrl40"> damping: 0.09,</span><br>
+                            <span class="mrl40"> avoidOverlap: 0</span><br>
+                            <span class="mrl20">}</span><br>  
+                            <span class="mrl20"> forceAtlas2Based :{</span><br>
+                            <span class="mrl40"> gravitationalConstant: -50,</span><br>
+                            <span class="mrl40"> centralGravity: 0.01,</span><br>
+                            <span class="mrl40"> springConstant: 0.08,</span><br>
+                            <span class="mrl40"> springLength: 100,</span><br>
+                            <span class="mrl40"> damping: 0.4,</span><br>
+                            <span class="mrl40"> avoidOverlap: 0</span><br>
+                            <span class="mrl20">}</span><br>  
+                            <span class="mrl20"> repulsion :{</span><br>
+                            <span class="mrl40"> centralGravity: 0.2,</span><br>
+                            <span class="mrl40"> springLength: 200,</span><br>
+                            <span class="mrl40"> springConstant: 0.05,</span><br>
+                            <span class="mrl40"> nodeDistance: 100,</span><br>
+                            <span class="mrl40"> damping: 0.09</span><br>
+                            <span class="mrl20">}</span><br>  
+                            <span class="mrl20"> hierarchicalRepulsion :{</span><br>
+                            <span class="mrl40"> centralGravity: 0.0,</span><br>
+                            <span class="mrl40"> springLength: 100,</span><br>
+                            <span class="mrl40"> springConstant: 0.01,</span><br>
+                            <span class="mrl40"> nodeDistance: 120,</span><br>
+                            <span class="mrl40"> damping: 0.09</span><br>
+                            <span class="mrl20">}</span><br>  
+                            <span class="mrl20">maxVelocity: 50,</span><br>  
+                            <span class="mrl20">minVelocity: 0.1,</span><br>  
+                            <span class="mrl20">solver: 'barnesHut',</span><br>  
+                            <span class="mrl20"> stabilization :{</span><br>
+                            <span class="mrl40"> enabled: true,</span><br>
+                            <span class="mrl40"> iterations: 1000,</span><br>
+                            <span class="mrl40"> updateInterval: 100,</span><br>
+                            <span class="mrl40"> onlyDynamicEdges: false,</span><br>
+                            <span class="mrl40"> fit: true</span><br>
+                            <span class="mrl20">}</span><br>  
+                            <span class="mrl20">timestep: 0.5,</span><br>  
+                            <span class="mrl20">adaptiveTimestep: true</span><br>  
+                            }
+                        </TabPane>
+                        <TabPane label="属性详情" name="name2">
+                            <Table :columns="nodeColumn" :data="physicsData"></Table>    
+                        </TabPane>
+                        <TabPane label="一般配置" name="name3">
+                            <span class="mrl20">var options = {</span> <br>
+                            <span class="mrl40">physics:{</span>     <br> 
+                            <span class="mrl60">stabilization: false</span><br>
+                            <span class="mrl40"> }</span>   <br>
+                            <span class="mrl20"> }</span>  <br>
+                            <span class="mrl20"> network.setOptions(options);</span>   
+                        </TabPane>
+                    </Tabs>
+                </div>
             </Panel>
 
         </Collapse>

@@ -110,5 +110,8 @@ span,i,b{
 .bddefault{
   border: 1px solid black;
 }
+.colorblack{
+  color: black;
+}
 
 
