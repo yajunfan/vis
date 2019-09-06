@@ -16,6 +16,7 @@ ul,li{
 }
 span,i,b{
   display: inline-block;
+  vertical-align: middle;
 }
 .letterspac2{
   letter-spacing:2px;

@@ -11,17 +11,17 @@ const Main = function(resolve, reject) {
                         {
                             id: 'module',
                             name: "配置module",
-                            icon: "iconfont sadb-dashboard",
+                            icon: "ivu-icon ivu-icon-ios-list",
                         },
                         {
                             id: 'content',
-                            name: "配置module",
-                            icon: "iconfont sadb-dashboard",
+                            name: "全局方法",
+                            icon: "ivu-icon ivu-icon-ios-laptop",
                         },
                         {
                             id: 'Event',
-                            name: "事件",
-                            icon: "iconfont sadb-dashboard",
+                            name: "network事件",
+                            icon: "ivu-icon ivu-icon-ios-ionitron",
                         }
                     ]
                 }

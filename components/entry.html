@@ -6,7 +6,7 @@
                 <span style="display:inline-block;font-size: 20px;vertical-align: -webkit-baseline-middle;">VIS</span>
             </menu-item>
             <menu-item v-for="item in navlists" :key="item.id" :name="item.id">
-                <i :class="item.icon"  class="icon_left"></i>
+                <i :class="item.icon"  class="icon_left" style="font-size:20px;"></i>
                 <span v-text="item.name"></span>
             </menu-item>
         </i-menu>
