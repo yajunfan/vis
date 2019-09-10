@@ -9,19 +9,24 @@ const Main = function(resolve, reject) {
                     isCollapsed: false, // 左边模块的菜单的收缩控制  entry.js
                     navlists: [ //导航列表
                         {
-                            id: 'module',
-                            name: "配置module",
-                            icon: "ivu-icon ivu-icon-ios-list",
+                            id: 'home',
+                            name: "首页",
+                            icon: "ivu-icon ivu-icon-ios-home-outline"
                         },
                         {
-                            id: 'content',
+                            id: 'module',
+                            name: "配置module",
+                            icon: "ivu-icon ivu-icon-ios-list"
+                        },
+                        {
+                            id: 'method',
                             name: "全局方法",
-                            icon: "ivu-icon ivu-icon-ios-laptop",
+                            icon: "ivu-icon ivu-icon-ios-laptop"
                         },
                         {
                             id: 'Event',
                             name: "network事件",
-                            icon: "ivu-icon ivu-icon-ios-ionitron",
+                            icon: "ivu-icon ivu-icon-ios-ionitron"
                         }
                     ]
                 }

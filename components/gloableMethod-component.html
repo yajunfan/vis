@@ -1,0 +1,39 @@
+
+<div>   
+    <div>
+        <h3>Network中包含的公共方法有哪些</h3>
+        <p></p>
+        <Collapse  v-model="value">
+            <Panel name="1">
+                <b> destroy()</b>
+                <p slot="content">
+                    <span>从DOM中删除network并删除所有Hammer绑定和引用,销毁该实例</span><br>
+                    <span>return:none</span><br>
+                    <b>network.destory()</b> </p>
+            </Panel>
+            <Panel name="2">
+                <b>setData({nodes:vis.DataSet[nodeary],edges:vis.DataSet[edgeary]})</b>
+                <p slot="content">
+                    <span>对network上的所有数据的格式化，如果物理模块中启用了稳定，则network将再次稳定。首次初始化network时也会执行此方法</span><br>
+                    <span>return:none</span><br>
+                    <b>var nodes = new vis.DataSet ([ {id: 1, label: 'Node 1'}, {id: 2, label: 'Node 2'}, {id: 3, label: 'Node 3'}]);</b> </p>
+                </p>
+            </Panel>
+            <Panel name="3">
+                <b>setOptions(Object)</b>
+                <p slot="content">
+                    <span>设置option</span><br>
+                    <span>return:none</span><br>
+                    <b>network.setOptions(option)</b> </p>
+                </p>
+            </Panel>
+            <Panel name="4">
+                <b>locale:'en'</b> 
+                <p slot="content"><span class="cred">【String】语言设置。默认为en。</span></p>
+            </Panel>
+
+        </Collapse>
+     
+    </div>
+</div>
+

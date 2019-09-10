@@ -1,0 +1,71 @@
+
+<div>   
+    <div class="header">
+        <h2>VIS.JS介绍</h2>
+        <p>
+            基于浏览器的动态可视化库。该库旨在易于使用，处理大量动态数据，以及实现对数据的操作和交互。
+            该库由组件DataSet，Timeline，Network，Graph2d和Graph3d组成。
+        </p> 
+        <h3 class="mrt10 cred">本篇主要将network；</h3>
+    </div>
+    <div class="mrt10">
+        <h2>Network介绍</h2>
+        <p>
+            network是一种用于将包含点和线的网络和网络之间的可视化展示。可视化易于使用，并支持自定义形状、样式、颜色、大小、图像等。网络可视化可以在任何现代浏览器上流畅地工作，
+            最多支持几千个节点和边。为了处理更多的节点，Network提供了集群支持。网络使用HTML画布进行渲染。<br>
+            从4.0开始，网络由处理网络特定部分的各个模块组成。这些模块有自己的文档、选项、方法和事件，您可以通过单击下面列表中的模块来访问它们。
+        </p> 
+
+    </div>
+    <div class="mrt10">
+        <h2>入门示例</h2>
+        <div>
+            <h3>【CSS】</h3>
+            <div>
+                <b>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">link</span> 
+                    <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> 
+                    <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/css"</span> 
+                    <span class="hljs-attribute">href</span>=<span class="hljs-value">"vis-network.min.css"</span>&gt;</span>
+                </b>
+            </div> 
+                <div>#mynetwork {</div>
+                <div class="mrl20">width: 600px;</div>
+                <div class="mrl20">width: 600px;</div>
+                <div class="mrl20">border: 1px solid lightgray;</div>
+                }
+            <h3 class="mrt10">【JS】</h3>
+            <div>
+                <b>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">script</span>
+                    <span class="hljs-attribute">src</span>=<span class="hljs-value">"vis-network.min.js"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">/script</span>&gt;
+                </b> 
+            </div>
+            <h3 class="mrt10">【HTML】</h3> 
+                <b>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">div</span>
+                    <span class="hljs-attribute">id</span>=<span class="hljs-value">"mynetwork"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">/div</span>&gt;
+                </b>
+            </div>
+            <h3 class="mrt10">【JAVASCRIPT】</h3> 
+            <div class="mrt10">1）创建一个nodes数组</div>
+            <div class="mrl20">var <b>nodes</b>  = new <b>vis.DataSet</b>([ {id: 1, label: 'Node 1'}, {id: 2, label: 'Node 2'}, {id: 3, label: 'Node 3'}]);</div>  
+            <div class="mrt10">2）创建一个edges数组</div>
+            <div class="mrl20">var <b>edges</b>  = new <b>vis.DataSet</b>([ {from: 1, to: 3},{from: 1, to: 2}]);</div>  
+            <div class="mrt10">3）创建network实例</div>
+            <div class="mrl20">var <b>container</b>  = document.getElementById('mynetwork');</div>
+            <div class="mrt10">4）创建data对象</div>
+            <div class="mrl20">var <b>data</b>  = { nodes: nodes, edges: edges }</div>
+            <div class="mrt10">5）创建option</div>
+            <div class="mrl20">var <b>options</b>  = { }</div>
+            <div class="mrt10">6）最后</div>
+            <div class="mrl20">var <b>network</b> = new vis.Network(container, data, options);</div>
+        </div>
+        <div>
+            <h3>之后的全局方法，事件全部使用network这个实例</h3>
+        </div>
+    </div>
+</div>
+

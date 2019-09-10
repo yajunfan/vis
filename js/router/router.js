@@ -4,10 +4,12 @@ const routes = [
       name:"Main",
       component: Main,
       redirect: {
-        name: 'module'
+        name: 'home'
       },
       children:[
-        { path: '/module',name:"module",component: Module }
+        { path: '/home',name:"home",component: Home},
+        { path: '/module',name:"module",component: Module },
+        { path: '/method',name:"method",component: GlobalMethod }
       ]    
     },
     
