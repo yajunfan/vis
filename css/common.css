@@ -114,5 +114,10 @@ span,i,b{
 .colorblack{
   color: black;
 }
+.titleStyle{
+  padding: 10px 0;
+  color: #e4e0e0;
+  background: #2d8cf0;
+}
 
 

@@ -1,0 +1,105 @@
+[
+    {
+        "name":"click",
+        "callbackinfo":"function (params){}；<br>params -- {<br><span class='mrl20'><i>edges:['608424e3-32ec-4a80-8f38-8a4f65584dd9']</i>,(点击的边的集合)</span><br><span class='mrl20'><i>event:事件对象</i>,</span><br><span class='mrl20'><i>items:[{edgeId: '1aa6e621-30ae-4296-a6be-74205aaebd17'}]</i>,(当点击的是边的时候，为包含该边id的数组；当点击的是节点的时候，包含的是从该节点发出的边的id)</span><br><span class='mrl20'><i>nodes:[1]</i>,(点击的节点的集合)</span><br><span class='mrl20'><i>pointer:{(包含的是节点的DOM位置和canvas的位置)<br><span class='mrl40'>DOM: {</span><br><span class='mrl60'>x: 498, y: 95</span><br><span class='mrl40'>},</span><br><span class='mrl40'>canvas: {</span><br><span class='mrl60'>x: 151.57059471338138, y: -518.2371156861888</span><br><span class='mrl40'>}</span><br><span class=''>}</span></i></span><br>}",
+        "desc":"单击事件"
+    },
+    {
+        "name":"doubleClick",
+        "desc":"双击事件",
+        "callbackinfo":"参考click事件，但是返回的params中没有items属性，其他的与click返回的param一样"
+        
+    },
+    {
+        "name":"oncontext",
+        "desc":"点击右键事件",
+        "callbackinfo":"参考click事件，但是返回的params中没有items属性，其他的与click返回的param一样；<br>当点击右键的时候，没有选中的节点或者边的时候，返回的edges和nodes均为空<br>节点可能会有多个，根据页面上选中的节点的数量计算"   
+    },
+    {
+        "name":"dragStart",
+        "desc":"开始拖拽事件",
+        "callbackinfo":"参考click事件，但是返回的params中没有items属性，其他的与click返回的param一样<br>当单击或者双击的是时候，节点的数组length都为1个，这个事件的nodes的length可能会大于1，<br>因为可以有多选的操作（【多选配置】interaction：{multiselect:true}）"   
+    },
+
+    {
+        "name":"dragging",
+        "desc":"拖拽中事件",
+        "callbackinfo":"参考dragStart事件"
+    },
+    {
+        "name":"dragEnd",
+        "desc":"拖拽结束事件",
+        "callbackinfo":"参考dragStart事件"
+    },
+    {
+        "name":"hold",
+        "desc":"当用户点击并按住鼠标（超过点击鼠标抬起的时间）或点击并按住触摸屏设备时触发。在这种情况下会【 先 】触发click事件。",
+        "callbackinfo":"参考dragStart事件"
+    },
+    {
+        "name":"release",
+        "desc":"在画布上绘制后触发已完成。可用于在网络上绘制",
+        "callbackinfo":"参考dragStart事件"
+    },
+    {
+        "name":"zoom",
+        "desc":"缩放事件",
+        "callbackinfo":"function (params){}；<br>params -- {<br><span class='mrl20'><i>direction:'+'</i>,(缩小【-】 放大【+】)</span><br><span class='mrl20'><i>scale:0.5126698193820982</i>,(缩放倍率)</span><br><span class='mrl20'><i>pointer:{(包含的是节点的DOM位置)<br><span class='mrl40'>x: 498, y: 95</span><br><span>},</i></span><br>}</span>"
+        
+    },
+    {
+        "name":"showPopup",
+        "desc":"显示title的时候触发; 只有当节点设置了title的时候，鼠标移上去;如{id: 0, label: '11', group: 0,title:'我来测试'}",
+        "callbackinfo":"function (params){}；<br>params -- 0(移上去有title的节点的id)"
+    },
+    {
+        "name":"hidePopup",
+        "desc":"隐藏title的时候触发; 但是有个特殊，当第一次显示过title之后，之后不管移上去的节点上是否配置了title，移出时都会触发该事件",
+        "callbackinfo":"function (params){}；<br>params -- undefined"
+    },
+    {
+        "name":"select",
+        "desc":"选中事件，选中了network，选中节点的时候，获取的是当前节点的id以及相关联的edges。选中edges时，获取的时edges的id。也可能是network的空白位置。该事件触发时同时会触发click事件",
+        "callbackinfo":"参考click事件,与click一样"
+    },
+    {
+        "name":"selectNode",
+        "desc":"选中节点（一个或者多个）触发事件",
+        "callbackinfo":"参考click事件,只不过params中没有items的属性，且如果有多个节点被选中，nodes中是多个选中的节点的id的集合，edges中也是与选中的节点连接的边的集合"
+    },
+    {
+        "name":"selectEdge",
+        "desc":"选中边（一个或者多个）触发事件",
+        "callbackinfo":"参考click事件,只不过params中没有items的属性，<br>【一种情况】如果选中的是节点且节点有连接的线，也会触发该事件；<br>【另一种情况】是只选择边，那nodes为[],edges中是选中的所有边"
+    },
+    {
+        "name":"deselectNode",
+        "desc":"取消选中节点（一个或者多个）触发事件；",
+        "callbackinfo":"function (params){}；<br>params -- {<br><span class='mrl20'><i>edges:[]</i>,</span><br><span class='mrl20'><i>event:事件对象</i>,</span><br><span class='mrl20'><i>nodes:[]</i>,</span><br><span class='mrl20'><i>previousSelection:{(上一次选中的节点和边缘的集合)<br><span class='mrl40'><i>edges:['3ff44af1-73e9-43bb-a49d-f2004fafefcb']</i></span><br><span class='mrl40'><i>nodes:[1]</i></span><br>},</i>,</span><br><span class='mrl20'><i>pointer:{(包含的是节点的DOM位置和canvas的位置)<br><span class='mrl40'>DOM: {</span><br><span class='mrl60'>x: 498, y: 95</span><br><span class='mrl40'>},</span><br><span class='mrl40'>canvas: {</span><br><span class='mrl60'>x: 151.57059471338138, y: -518.2371156861888</span><br><span class='mrl40'>}</span><br><span class=''>}</span></i></span><br>}"
+    },
+    {
+        "name":"deselectEdge",
+        "desc":"取消选中边（一个或者多个）触发事件；",
+        "callbackinfo":"参考deselectNode事件<br>【一种情况】如果取消选中的是节点且节点有连接的线，也会触发该事件；<br>【另一种情况】取消选择边，那nodes为[],edges中是选中的所有边"
+    },
+    {
+        "name":"hoverNode",
+        "desc":"鼠标移入节点事件",
+        "callbackinfo":"function (params){}；<br>params -- {<br><span class='mrl20'><i>event:事件对象</i>,</span><br><span class='mrl20'><i>nodes:16</i>,(hover的点id，只一个)</span><br><span class='mrl20'><i>pointer:{(包含的是节点的DOM位置和canvas的位置)<br><span class='mrl40'>DOM: {</span><br><span class='mrl60'>x: 498, y: 95</span><br><span class='mrl40'>},</span><br><span class='mrl40'>canvas: {</span><br><span class='mrl60'>x: 151.57059471338138, y: -518.2371156861888</span><br><span class='mrl40'>}</span><br><span class=''>}</span></i></span><br>}"
+    },
+    {
+        "name":"blurNode",
+        "desc":"鼠标移出节点事件",
+        "callbackinfo":"同hoverNode"
+    },
+    {
+        "name":"hoverEdge",
+        "desc":"鼠标移入edge事件",
+        "callbackinfo":"<b>不同于</b>selectEdge的事件，即使选中的是点，只要点上有连的线，也会触发；【这个只有当鼠标移到边上才会触发】function (params){}；<br>params -- {<br><span class='mrl20'><i>event:事件对象</i>,</span><br><span class='mrl20'><i>edge:'d5466980-ea68-4397-a447-e928fbfc177b'</i>,(hover的边的id，只一个)</span><br><span class='mrl20'><i>pointer:{(包含的是节点的DOM位置和canvas的位置)<br><span class='mrl40'>DOM: {</span><br><span class='mrl60'>x: 498, y: 95</span><br><span class='mrl40'>},</span><br><span class='mrl40'>canvas: {</span><br><span class='mrl60'>x: 151.57059471338138, y: -518.2371156861888</span><br><span class='mrl40'>}</span><br><span class=''>}</span></i></span><br>}"
+    },
+    {
+        "name":"blurEdge",
+        "desc":"鼠标移出edge事件",
+        "callbackinfo":"同hoverEdge"
+    }
+]

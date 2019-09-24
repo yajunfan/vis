@@ -5,7 +5,7 @@ const Main = function(resolve, reject) {
             template: res,
             data: function() {
                 return{
-                    nav_name:"network",//点击的模块的名字
+                    nav_name:"home",//点击的模块的名字
                     isCollapsed: false, // 左边模块的菜单的收缩控制  entry.js
                     navlists: [ //导航列表
                         {
