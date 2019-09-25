@@ -1,5 +1,5 @@
 const Module = function(resolve, reject) {
-    $.get('../../../../components/module-component.html').then(function(res) { // 注意$.get(url)
+    $.get('vis/components/module-component.html').then(function(res) { // 注意$.get(url)
         resolve({ // 这里是构造一个component
             template: res,
             data: function() {
