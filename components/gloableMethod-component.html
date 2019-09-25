@@ -10,33 +10,35 @@
                     <Collapse  accordion v-model="value1">
                         <Panel name="1">
                             <b> destroy()</b>
-                            <p slot="content">
-                                <span>从DOM中删除network并删除所有Hammer绑定和引用,销毁该实例</span><br>
-                                <span>return:none</span><br>
-                                <b>network.destory()</b> </p>
+                            <p slot="content" class="f18">
+                                <span>【 描述 】从DOM中删除network并删除所有Hammer绑定和引用,销毁该实例</span><br>
+                                <span class='cred'>【 返回 】return:none</span><br>
+                                <b>【 使用 】network.destory()</b> </p>
                         </Panel>
                         <Panel name="2">
                             <b>setData({nodes:vis.DataSet[nodeary],edges:vis.DataSet[edgeary]})</b>
-                            <p slot="content">
-                                <span>对network上的所有数据的格式化，如果物理模块中启用了稳定，则network将再次稳定。首次初始化network时也会执行此方法</span><br>
-                                <span>return:none</span><br>
-                                <b>var nodes = new vis.DataSet ([ {id: 1, label: 'Node 1'}, {id: 2, label: 'Node 2'}, {id: 3, label: 'Node 3'}]);</b> </p>
+                            <p slot="content" class="f18">
+                                <span>【 描述 】对network上的所有数据的格式化，如果物理模块中启用了稳定，则network将再次稳定。首次初始化network时也会执行此方法</span><br>
+                                <span class='cred'>【 返回 】return:none</span><br>
+                                <b>【 使用 】var nodes = new vis.DataSet ([ {id: 1, label: 'Node 1'}, {id: 2, label: 'Node 2'}, {id: 3, label: 'Node 3'}]);</b> </p>
                             </p>
                         </Panel>
                         <Panel name="3">
                             <b>setOptions(Object)</b>
-                            <p slot="content">
-                                <span>设置option,这是全局的修改options的配置，不针对与某一个节点，作用于整个network</span><br>
-                                <span>return:none</span><br>
-                                <b>network.setOptions(option)</b><br>
+                            <p slot="content" class="f18">
+                                <span>【 描述 】设置option,这是全局的修改options的配置，不针对与某一个节点，作用于整个network</span><br>
+                                <span class='cred'>【 返回 】return:none</span><br>
+                                <b>【 使用 】network.setOptions(option)</b><br>
                                 eg：<img src="../images/example/setoption.jpg" alt="设置option">
                             </p>
                         </Panel>
                         <Panel name="4">
                             <b>on(String event name, Function callback)</b> 
-                            <div slot="content">
-                                <span class="cred">
-                                    eg:network.on("doubleClick", function (params) { console.log("doubleClick",params) }) 设置事件监听器;
+                            <div slot="content" class="f18">
+                                <span>【 描述 】监听事件</span><br>
+                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span>
+                                    【 使用 】network.on("doubleClick", function (params) { console.log("doubleClick",params) }) 设置事件监听器;
                                 </span><br>
                                 <b>具体的事件名称和回调函数看下表</b>
                                 <Table :columns="eventNameColumn" :data="eventNameData"></Table> 
@@ -44,17 +46,21 @@
                         </Panel>
                         <Panel name="5">
                             <b>off(String event name, Function callback)</b> 
-                            <div slot="content">
-                                <span class="cred">
-                                    eg:network.off("doubleClick");删除事件监听器，在次代码之前的该事件取消执行，如果没有提供事件名称，如'doubleClick',那就是将所有的network上绑定的事件取消<br>
+                            <div slot="content" class="f18">
+                                <span>【 描述 】撤销监听事件</span><br>
+                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span>
+                                    【 使用 】network.off("doubleClick");删除事件监听器，在次代码之前的该事件取消执行，如果没有提供事件名称，如'doubleClick',那就是将所有的network上绑定的事件取消<br>
                                 </span>
                             </div>
                         </Panel>
                         <Panel name="6">
                             <b>once(String event name, Function callback)</b> 
-                            <div slot="content">
-                                <span class="cred">
-                                    eg:network.once("click",function(params){});以click事件为利，只执行第一次，之后不再执行。发生之后，事件监听器将被删除<br>
+                            <div slot="content" class="f18">
+                                <span>【 描述 】只执行一次监听事件</span><br>
+                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span>
+                                    【 使用 】network.once("click",function(params){});以click事件为利，只执行第一次，之后不再执行。发生之后，事件监听器将被删除<br>
                                 </span>
                             </div>
                         </Panel>
@@ -67,25 +73,25 @@
                     <Collapse  accordion v-model="value2">
                         <Panel name="1">
                             <b> canvasToDOM({x:Number,y:Number})</b>
-                            <p slot="content">
-                                <span>此函数将画布坐标转换为DOM上的坐标。输入和输出的形式为{x：Number，y：Number}。 DOM值是相对于网络容器的</span><br>
-                                <span>return:Object</span><br>
-                                <b>var obj=network.canvasToDOM({x:itempos.x,y:itempos.y}); </b> </p>
+                            <p slot="content" class="f18">
+                                <span>【 描述 】此函数将画布坐标转换为DOM上的坐标。输入和输出的形式为{x：Number，y：Number}。 DOM值是相对于网络容器的</span><br>
+                                <span class='cred'>【 返回 】return:Object {x:100,y:100}</span><br>
+                                <b>【 使用 】var obj=network.canvasToDOM({x:itempos.x,y:itempos.y}); </b> </p>
                         </Panel>
                         <Panel name="2">
                             <b>DOMtoCanvas({x:Number,y:Number})</b>
-                            <p slot="content">
-                                <span>此函数将DOM坐标转换为画布上的坐标。输入和输出的形式为{x：Number，y：Number}。 DOM值是相对于网络容器的</span><br>
-                                <span>return:Object</span><br>
-                                <b>var obj=network.DOMtoCanvas({x:itempos.x,y:itempos.y});</b> </p>
+                            <p slot="content" class="f18">
+                                <span>【 描述 】此函数将DOM坐标转换为画布上的坐标。输入和输出的形式为{x：Number，y：Number}。 DOM值是相对于网络容器的</span><br>
+                                <span class='cred'>【 返回 】return:Object  {x:100,y:100}</span><br>
+                                <b>【 使用 】var obj=network.DOMtoCanvas({x:itempos.x,y:itempos.y});</b> </p>
                             </p>
                         </Panel>
                         <Panel name="3">
                             <b>redraw()</b>
-                            <div slot="content">
-                                <span>重绘network，执行此事件的时候，会一同执行以下三个事件，我们在以下三个事件中做需要的功能逻辑</span><br>
-                                <span>return:none</span><br>
-                                <b>network.redraw()</b><br>
+                            <div slot="content" class="f18">
+                                <span>【 描述 】重绘network，执行此事件的时候，会一同执行以下三个事件，我们在以下三个事件中做需要的功能逻辑</span><br>
+                                <span class='cred'>【 返回 】return:none</span><br>
+                                <b>【 使用 】network.redraw()</b><br>
                                 <div>
                                     <p>同时要执行以下三件事</p>
                                     network.on("initRedraw", function () {console.log(3)});<br>
@@ -101,11 +107,10 @@
                         </Panel>
                         <Panel name="4">
                             <b>setSize(String width, String height)</b> 
-                            <div slot="content">
-                                <span class="cred">
-                                    eg:network.setSize('1200','600');;
-                                </span><br>
-                                <b>canvas的宽高</b>
+                            <div slot="content" class="f18">
+                                <span>【 描述 】设置画布的大小（canvas的宽高）</span><br>
+                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span>【 使用 】network.setSize('1200','600');</span><br>
                             </div>
                         </Panel>
                     </Collapse>
@@ -117,31 +122,31 @@
                     <Collapse  accordion v-model="value3">
                         <Panel name="1">
                             <b> destroy()</b>
-                            <p slot="content">
-                                <span>从DOM中删除network并删除所有Hammer绑定和引用,销毁该实例</span><br>
-                                <span>return:none</span><br>
-                                <b>network.destory()</b> </p>
+                            <p slot="content" class="f18">
+                                <span>【 描述 】从DOM中删除network并删除所有Hammer绑定和引用,销毁该实例</span><br>
+                                <span class='cred'>return:none</span><br>
+                                <b>eg:network.destory()</b> </p>
                         </Panel>
                         <Panel name="2">
                             <b>setData({nodes:vis.DataSet[nodeary],edges:vis.DataSet[edgeary]})</b>
-                            <p slot="content">
-                                <span>对network上的所有数据的格式化，如果物理模块中启用了稳定，则network将再次稳定。首次初始化network时也会执行此方法</span><br>
+                            <p slot="content" class="f18">
+                                <span>【 描述 】对network上的所有数据的格式化，如果物理模块中启用了稳定，则network将再次稳定。首次初始化network时也会执行此方法</span><br>
                                 <span>return:none</span><br>
                                 <b>var nodes = new vis.DataSet ([ {id: 1, label: 'Node 1'}, {id: 2, label: 'Node 2'}, {id: 3, label: 'Node 3'}]);</b> </p>
                             </p>
                         </Panel>
                         <Panel name="3">
                             <b>setOptions(Object)</b>
-                            <p slot="content">
-                                <span>设置option,这是全局的修改options的配置，不针对与某一个节点，作用于整个network</span><br>
-                                <span>return:none</span><br>
-                                <b>network.setOptions(option)</b><br>
+                            <p slot="content" class="f18">
+                                <span>【 描述 】设置option,这是全局的修改options的配置，不针对与某一个节点，作用于整个network</span><br>
+                                <span class='cred'>return:none</span><br>
+                                <b>eg:network.setOptions(option)</b><br>
                                 eg：<img src="../images/example/setoption.jpg" alt="设置option">
                             </p>
                         </Panel>
                         <Panel name="4">
                             <b>on(String event name, Function callback)</b> 
-                            <div slot="content">
+                            <div slot="content" class="f18">
                                 <span class="cred">
                                     eg:network.on("doubleClick", function (params) { console.log("doubleClick",params) });
                                 </span><br>
@@ -150,7 +155,7 @@
                         </Panel>
                         <Panel name="4">
                             <b>off(String event name, Function callback)</b> 
-                            <div slot="content">
+                            <div slot="content" class="f18">
                                 <span class="cred">
                                     String event name包含:<br>
                                 </span>
@@ -166,10 +171,10 @@
                     <Collapse accordion  v-model="value4">
                         <Panel name="1">
                             <b> getSeed()</b>
-                            <p slot="content">
-                                <span>当节点中没有x，y，network生成的随机的节点分布，会有一个seed值，我们可以通过该方法获取到。当下次希望仍然以这个布局展示的话，可以在layout.randomSeed中设置</span><br>
-                                <span>return:Number</span><br>
-                                <b>var seed = network.getSeed();获取seed值</b> <br><b>layout.randomSeed = seed;设置seed值</b></p>
+                            <p slot="content" class="f18">
+                                <span>【 描述 】当节点中没有x，y，network生成的随机的节点分布，会有一个seed值，我们可以通过该方法获取到。当下次希望仍然以这个布局展示的话，可以在layout.randomSeed中设置</span><br>
+                                <span class='cred'>【 返回 】return:Number</span><br>
+                                <b >【 使用 】var seed = network.getSeed();获取seed值</b> <br><b class="mrl80">layout.randomSeed = seed;设置seed值</b></p>
                         </Panel>
                     </Collapse>
                 </div>
@@ -179,12 +184,60 @@
                 <div slot="content">
                     <Collapse  accordion v-model="value5">
                         <Panel name="1">
-                            <b> destroy()</b>
-                            <p slot="content">
-                                <span>从DOM中删除network并删除所有Hammer绑定和引用,销毁该实例</span><br>
-                                <span>return:none</span><br>
-                                <b>network.destory()</b> </p>
+                            <b>getPositions()</b>
+                            <p slot="content" class="f18">
+                                <span>【 描述 】获取节点的canvas的位置</span><br>
+                                <span class='cred'>【 返回 】return:Object {<br>
+                                    <span class="mrl40">节点id1:{x: -115, y: 52},</span><br><span class="mrl40">节点id2:{x: -115, y: 52}</span><br>}</span><br>
+                                <b>【 使用 】var obj=network.getPositions([节点id1,节点id2]);<br>var x = obj[0].x</b>
+                            </p>
                         </Panel>
+                        <Panel name="2">
+                            <b> storePositions()</b>
+                            <p slot="content" class="f18">
+                                <span>【 描述 】当使用vis.DataSet到您的节点加载到网络中，这种方法将会把所有节点的X和Y位置到该数据集。如果你从数据库加载您的节点(从后台获取数据)，并动态地这样加上数据集，
+                                    <b>你可以用它来稳定您的网络一次</b> ，然后通过DataSet保存在数据库中的位置，以便下一次加载的节点，将稳定接近瞬间。<br>
+                                    <br>
+                                    如果节点还在移动，并在使用动态边缘光滑（这是在默认情况下），你可以使用选项stabilization.onlyDynamicEdges物理模块中，以改善初始化时间。<br>
+                                    <br>
+                                    <b>此方法不支持集群。目前，它使用群集时，因为他们不能正确地从刚才的位置初始化是不可能的缓存位置。</b> 
+                                </span><br>
+                                <span class='cred'>【 返回 】return:none</span><br>
+                                <b>【 使用 】network.storePositions()</b> </p>
+                        </Panel>
+                        <Panel name="3">
+                            <b> moveNode()</b>
+                            <p slot="content" class="f18">
+                                <span>【 描述 】手动移动画布中的节点,</span><br>
+                                <span class='cred'>【 返回 】return:none</span><br>
+                                <b>【 使用 】network.moveNode(节点id,x,y)<br><span class="mrl80">x:要移动的x位置 <br>y:要移动的y位置</span></b></p>
+                        </Panel>
+                        <Panel name="4">
+                            <b> getBoundingBox()</b>
+                            <p slot="content" class="f18">
+                                <span>【 描述 】返回包含标签的节点的边界框(canvas坐标，且将标签算在内,根据shape的不同，标签在节点的里边或者外边)</span><br>
+                                <span class='cred'>【 返回 】return:object{<br>
+                                    <span class="mrl40">top: -115, bottom: 5,left:0,right:0</span><br>}
+                                </span><br>
+                                <b>【 使用 】network.getBoundingBox(节点id)</b> </p>
+                        </Panel>
+                        <Panel name="5">
+                            <b> getConnectedNodes()</b>
+                            <p slot="content" class="f18">
+                                <span>【 描述 】如果传的是节点id，那么返回的是与该节点连接的所有的节点的id组成的数组（包括隐藏的，不在画布上显示的节点id）
+                                        并且如果不传第二个参数，默认是from。<b> from:返回的是 所有指向该节点的节点id集合</b>，<b>如果是to，那么返回的是该节点指向的节点id集合</b>
+                                        如果传的是边缘id，那么返回的是该边缘所连接的两个节点的id集合 
+                                </span><br>
+                                <span class='cred'>【 返回 】return:none</span><br>
+                                <b>【 使用 】network.getConnectedNodes(节点id或者边缘id,direction)</b> </p>
+                        </Panel>
+                        <Panel name="6">
+                            <b> getConnectedEdges()</b>
+                            <p slot="content" class="f18">
+                                <span>【 描述 】从DOM中删除network并删除所有Hammer绑定和引用,销毁该实例</span><br>
+                                <span class='cred'>【 返回 】return:none</span><br>
+                                <b>【 使用 】network.destory()</b> </p>
+                        </Panel> 
                     </Collapse>
                 </div>
             </Panel>
@@ -193,8 +246,22 @@
                 <div slot="content">
                     <Collapse accordion  v-model="value6">
                         <Panel name="1">
-                            <b> destroy()</b>
-                            <p slot="content">
+                            <b> startSimulation()</b>
+                            <p slot="content" class="f18">
+                                <span>从DOM中删除network并删除所有Hammer绑定和引用,销毁该实例</span><br>
+                                <span>return:none</span><br>
+                                <b>network.destory()</b> </p>
+                        </Panel>
+                        <Panel name="2">
+                            <b> startSimulation()</b>
+                            <p slot="content" class="f18">
+                                <span>从DOM中删除network并删除所有Hammer绑定和引用,销毁该实例</span><br>
+                                <span>return:none</span><br>
+                                <b>network.destory()</b> </p>
+                        </Panel>
+                        <Panel name="3">
+                            <b> startSimulation()</b>
+                            <p slot="content" class="f18">
                                 <span>从DOM中删除network并删除所有Hammer绑定和引用,销毁该实例</span><br>
                                 <span>return:none</span><br>
                                 <b>network.destory()</b> </p>
@@ -208,7 +275,7 @@
                     <Collapse accordion  v-model="value6">
                         <Panel name="1">
                             <b> destroy()</b>
-                            <p slot="content">
+                            <p slot="content" class="f18">
                                 <span>从DOM中删除network并删除所有Hammer绑定和引用,销毁该实例</span><br>
                                 <span>return:none</span><br>
                                 <b>network.destory()</b> </p>
@@ -222,7 +289,7 @@
                     <Collapse accordion  v-model="value6">
                         <Panel name="1">
                             <b> destroy()</b>
-                            <p slot="content">
+                            <p slot="content" class="f18">
                                 <span>从DOM中删除network并删除所有Hammer绑定和引用,销毁该实例</span><br>
                                 <span>return:none</span><br>
                                 <b>network.destory()</b> </p>
@@ -236,7 +303,7 @@
                     <Collapse accordion  v-model="value6">
                         <Panel name="1">
                             <b> destroy()</b>
-                            <p slot="content">
+                            <p slot="content" class="f18">
                                 <span>从DOM中删除network并删除所有Hammer绑定和引用,销毁该实例</span><br>
                                 <span>return:none</span><br>
                                 <b>network.destory()</b> </p>
@@ -249,11 +316,53 @@
                 <div slot="content">
                     <Collapse accordion  v-model="value6">
                         <Panel name="1">
-                            <b> enableEditMode()</b>
-                            <p slot="content">
-                                <span>以编程方式启用编辑模式。与按下编辑按钮类似的效果。</span><br>
-                                <span>return:none</span><br>
-                                <b>network.enableEditMode()</b> </p>
+                            <b>enableEditMode()</b>
+                            <p slot="content" class="f18">
+                                <span>【 描述 】以js启用编辑模式。与按编辑按钮相似的效果</span><br>
+                                <span class='cred'>【 返回 】return:none</span><br>
+                                <b>【 使用 】network.enableEditMode()</b> </p>
+                        </Panel>
+                        <Panel name="2">
+                            <b> disableEditMode()</b>
+                            <p slot="content" class="f18">
+                                <span>【 描述 】从DOM中删除network并删除所有Hammer绑定和引用,销毁该实例</span><br>
+                                <span class='cred'>【 返回 】return:none</span><br>
+                                <b>【 使用 】network.destory()</b> </p>
+                        </Panel>
+                        <Panel name="3">
+                            <b> addNodeMode()</b>
+                            <p slot="content" class="f18">
+                                <span>【 描述 】从DOM中删除network并删除所有Hammer绑定和引用,销毁该实例</span><br>
+                                <span class='cred'>【 返回 】return:none</span><br>
+                                <b>【 使用 】network.destory()</b> </p>
+                        </Panel>
+                        <Panel name="4">
+                            <b> editNode()</b>
+                            <p slot="content" class="f18">
+                                <span>【 描述 】从DOM中删除network并删除所有Hammer绑定和引用,销毁该实例</span><br>
+                                <span class='cred'>【 返回 】return:none</span><br>
+                                <b>【 使用 】network.destory()</b> </p>
+                        </Panel>
+                        <Panel name="5">
+                            <b> addEdgeMode()</b>
+                            <p slot="content" class="f18">
+                                <span>【 描述 】从DOM中删除network并删除所有Hammer绑定和引用,销毁该实例</span><br>
+                                <span class='cred'>【 返回 】return:none</span><br>
+                                <b>【 使用 】network.destory()</b> </p>
+                        </Panel>
+                        <Panel name="6">
+                            <b> editEdgeMode()</b>
+                            <p slot="content" class="f18">
+                                <span>【 描述 】从DOM中删除network并删除所有Hammer绑定和引用,销毁该实例</span><br>
+                                <span class='cred'>【 返回 】return:none</span><br>
+                                <b>【 使用 】network.destory()</b> </p>
+                        </Panel>
+                        <Panel name="7">
+                            <b> deleteSelected()</b>
+                            <p slot="content" class="f18">
+                                <span>【 描述 】从DOM中删除network并删除所有Hammer绑定和引用,销毁该实例</span><br>
+                                <span class='cred'>【 返回 】return:none</span><br>
+                                <b>【 使用 】network.destory()</b> </p>
                         </Panel>
                     </Collapse>
                 </div>
