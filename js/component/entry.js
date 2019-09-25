@@ -1,6 +1,6 @@
 
 const Main = function(resolve, reject) {
-    $.get('components/entry.html').then(function(res) { 
+    $.get('vis/components/entry.html').then(function(res) { 
         resolve({ // 这里是构造一个component
             template: res,
             data: function() {
