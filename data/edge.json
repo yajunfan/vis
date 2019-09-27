@@ -141,7 +141,7 @@
         "type":"Number or Boolean or Object",
         "default":"false",
         "desc":"设置数字，将边缘标签最大宽度设为该值",
-        "moredetail":"当为对象的时候<br>widthConstraint:{<br><span class='mrl20'><i class='colorblack'>maximum:Number,</i>(默认是undefined,如果指定了数字，边缘标签的最大宽度该值，边缘便签的线条以空格打破来保持最大值)</span><br>}<br><img src='./../../images/example/edgeCon1.jpg'/><img  class='mrl60' src='./../../images/example/edgeCon2.jpg'/>"
+        "moredetail":"当为对象的时候<br>widthConstraint:{<br><span class='mrl20'><i class='colorblack'>maximum:Number,</i>(默认是undefined,如果指定了数字，边缘标签的最大宽度该值，边缘便签的线条以空格打破来保持最大值)</span><br>}<br><img src='./images/example/edgeCon1.jpg'/><img  class='mrl60' src='./images/example/edgeCon2.jpg'/>"
     },
     {
         "name":"width",

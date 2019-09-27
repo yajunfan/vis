@@ -178,7 +178,7 @@
         "type":"Number or Boolean or Object",
         "default":"false",
         "desc":"设置数字，将节点的最小和最大宽度设为该值；当label在节点内的时候，会根据内容先撑开，感觉更像是设置的padding-left和padding-right；当值设为很小的时候，label会换行，节点会保持一个最小值，里边的内容会换行",
-        "moredetail":"当为对象的时候<br>widthConstraint:{<br><span class='mrl20'><i class='colorblack'>minimum:Number(默认是undefined,节点的最小宽度该值，如果节点的宽度小于该值，那么以节点的值为最小宽度值)</span><br><span class='mrl20'><i class='colorblack'>maximum:Number,</i>(默认是undefined,节点的最大宽度该值，节点的label会断开以空格来填充，以保持低于最大值)</span><br><img src='./../../images/example/width1.jpg'/><img  class='mrl60' src='./../../images/example/width2.jpg'/>"
+        "moredetail":"当为对象的时候<br>widthConstraint:{<br><span class='mrl20'><i class='colorblack'>minimum:Number(默认是undefined,节点的最小宽度该值，如果节点的宽度小于该值，那么以节点的值为最小宽度值)</span><br><span class='mrl20'><i class='colorblack'>maximum:Number,</i>(默认是undefined,节点的最大宽度该值，节点的label会断开以空格来填充，以保持低于最大值)</span><br><img src='./images/example/width1.jpg'/><img  class='mrl60' src='./images/example/width2.jpg'/>"
     },
     {
         "name":"x",
