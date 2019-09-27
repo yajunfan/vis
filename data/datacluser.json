@@ -1,0 +1,30 @@
+[
+    {
+        "name":"joinCondition",
+        "type":"Function",
+        "default":"joinCondition(nodeOptions: Object) or joinCondition(parentNodeOptions: Object,childNodeOptions: Object)",
+        "desc":"",
+        "moredetail":""
+    },
+    {
+        "name":"processProperties",
+        "type":"Function",
+        "default":"processProperties(clusterOptions: Object,childNodesOptions: Array,childEdgesOptions: Array)",
+        "desc":"",
+        "moredetail":""
+    },
+    {
+        "name":"clusterNodeProperties",
+        "type":"Object",
+        "default":"Object",
+        "desc":"",
+        "moredetail":""
+    },
+    {
+        "name":"clusterEdgeProperties",
+        "type":"Object",
+        "default":"Object",
+        "desc":"",
+        "moredetail":""
+    }
+]

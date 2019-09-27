@@ -4,17 +4,18 @@ const GlobalMethod = function(resolve, reject) {
             template: res,
             data: function() {
                 return{
-                    valueglobal:"1",
+                    valueglobal:"10",
                     value1:"",
                     value2:"",
                     value3:"",
                     value4:"",
                     value5:"",
                     value6:"",
-                    value7:"",
+                    value7:"1",
                     value8:"",
                     value9:"",
-                    value10:"",
+                    value10:"5",
+                    value11:"",
                     eventNameColumn:[
                         {key:"name", title:"名称" , width: 180},
                         {key:"callbackinfo", title:"回调函数",

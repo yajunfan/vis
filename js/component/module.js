@@ -4,7 +4,7 @@ const Module = function(resolve, reject) {
             template: res,
             data: function() {
                 return{
-                    value:1,
+                    value:15,
                     nodeData:[],
                     nodeColumn:[
                         {
@@ -36,7 +36,7 @@ const Module = function(resolve, reject) {
                             }
                         },
                         {key:"name", title:"名称" , width: 180},
-                        {key:"type", title:"类型", width: 220},
+                        {key:"type", title:"类型", width: 150},
                         {key:"default",title:"默认值", width: 100},
                         {key:"desc",title:"描述"}
                     ],
@@ -46,13 +46,15 @@ const Module = function(resolve, reject) {
                     interactionData:[],
                     manipulationData:[],
                     physicsData:[],
+                    clusterData:[],
                     functionFlag:{
                         nodeflag:false,
                         edgeflag:false,
                         layoutflag:false,
                         interactionflag:false,
                         manipulationflag:false,
-                        physicsflag:false
+                        physicsflag:false,
+                        clusterflag:false
                     },
                     chosenNodeParams:[  //chosen.node为函数的时候data
                       {property:"color",example:"见  node.color.background"},
@@ -176,15 +178,30 @@ const Module = function(resolve, reject) {
                                 console.log(arguments)
                             }
                         });
-                    }
-                    
+                    }; 
+                },
+                //获取Cluster的option中可配置参数列表
+                getClusterFn(){
+                    let this_ = this;
+                    if(!this_.functionFlag.clusterflag){
+                        $.ajax({
+                            url:"../../../data/datacluser.json",
+                            success:function(data){
+                                this_.clusterData = data;
+                                this_.functionFlag.clusterflag = true;
+                            },
+                            error:function(){
+                                console.log(arguments)
+                            }
+                        });
+                    }; 
                 }
             },
             created() {
                
             },
             mounted: function() {
-             
+                this.getClusterFn();
             }
         });
     })

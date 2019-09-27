@@ -25,7 +25,7 @@
     },
     {
         "name":"chosen",
-        "type":"Object或者是Boolean",
+        "type":"Object or Boolean",
         "default":true,
         "desc":"如果为true，则【选择或悬停】在节点上将根据默认值更改【它及其标签】的特征（如高亮的颜色等等），如果为false，则在【选择】节点时不会对【节点或其标签】进行更改。如果提供了对象，则在选择节点时可以更精细地调整节点和标签特征。",
         "moredetail":"为对象的时候：{ node : function / boolean, label : function / boolean}。<br> node:true,(选择或悬停在节点上将根据默认值更改其特征。如果为false，则在选择节点时不会对节点进行任何更改),lable同理",
@@ -33,35 +33,35 @@
     },
     {
         "name":"color",
-        "type":"Object或者是String",
+        "type":"Object or String",
         "default":"{}",
         "desc":"color对象包含节点在每种情况下的颜色信息。具体包括属性下面表格见；<br>当type为string的时候，可以设置单一颜色，支持【rgba(120,32,14,1)】、【#ffffff】、red",
         "moredetail":"color:{<br><span class='mrl20'><i class='colorblack'>border:String,</i>(未选中或悬停时节点边框的颜色（假设在交互模块中启用了悬停）)</span><br><span class='mrl20'><i class='colorblack'>background:String,</i>(同border)</span><br><span class='mrl20'><i class='colorblack'>highlight：string,</i>(选中节点的颜色)/Object</span><br><span class='mrl40'><i class='colorblack'>highlight:{border:String(选中节点的边框颜色),background:String(选中节点的背景色)},</i></span>,<br><span class='mrl20'><i class='colorblack'>hover:string,</i>(鼠标悬停节点上的颜色)/Object</span><br><span class='mrl40'><i class='colorblack'>hover:{border:String,background:String}(假设启用了悬停)</span><br>}"
     },
     {
         "name":"fixed",
-        "type":"Object或者是Boolean",
+        "type":"Object or Boolean",
         "default":"Object:{x:false,y:false}",
         "desc":"当该值为Boolean，且为true的时候，那节点固定，不可以移动",
-        "moredetail":"当该值为对象的时候，可以设定在x轴或者y轴的移动，设置为false，可以移动，设置为true，不可移动"
+        "moredetail":"当该值为对象的时候，可以设定在x轴 or y轴的移动，设置为false，可以移动，设置为true，不可移动"
     },
     {
         "name":"font",
-        "type":"Object或者是String",
+        "type":"Object or String",
         "default":"false",
         "desc":"此对象定义标签的详细信息。表单中还支持简写（'size face color'），例如'14px arial red'",
-        "moredetail":"<span>font:{<br><span class='mrl20'><i class='colorblack'>color:String,</i></span><br><span class='mrl20'><i class='colorblack'>size:Number(14),</i></span><br><span class='mrl20'><i class='colorblack'>face:String,</i>(默认是arial；同font-family),</span><br><span class='mrl20'><i class='colorblack'>background:String,</i>（默认是undefined。标签后面用提供的颜色绘制一个背景矩形）,</span><br><span class='mrl20'><i class='colorblack'>strokeWidth:Number,</i>（默认是0。作为背景矩形的另一种选择，可以围绕文本绘制边框。当提供大于0的值时，将绘制笔画）,</span><br><span class='mrl20'><i class='colorblack'>strokeColor:String,</i>（当比划的值大于0，比划的颜色）,</span><br><span class='mrl20'><i class='colorblack'>align:String,</i>（默认center，同text-align）,</span><br><span class='mrl20'><i class='colorblack'>vadjust:String,</i>（默认0，垂直方向的字体的矫正，定位是down）,</span><br><span class='mrl20'><i class='colorblack'>multi: Boolean or String,</i>（默认false，如果false，标签被视为使用基本字体绘制的纯文本。label中的内容可能是有【<b></b><i></i>标签; eg:'《b》This《/b》】如果true或'html'标签可能是多面的，带有粗体，斜体和代码标记，则解释为html。如果值为'markdown'或者'md'标签可能是多面的，则使用粗体，斜体和代码标记，将其解释为markdown。粗体，斜体，粗体斜体和等宽字体可分别在font.bold，font.ital，font.boldital和font.mono属性下设置）,</span><br><span class='mrl20'><i class='colorblack'>bold:Object/String,</i>(eg:'14px arial red')标签中粗体样式,当标签中有粗体样式时</span><br><span class='mrl40'><i class='colorblack'>为Object：{</span><span class='mrl60'><i class='colorblack'>color:String,</i>(默认是#343434)</span><br><span class='mrl60'><i class='colorblack'>size:Number,</i>(默认是14)</span><br><span class='mrl60'><i class='colorblack'>face:String,</i>(默认是arial，字体系列)</span><br><span class='mrl60'><i class='colorblack'>mod:String,</i>(默认是bold)</span>}<br><span class='mrl60'><i class='colorblack'>vadjust:String,</i>(默认是0，对标签文本中粗体斜体字体的垂直定位进行字体特定的校正。（正向下。）默认为基本字体的valign)</span><br><span class='mrl40'></span>}<br><span class='mrl20'><i class='colorblack'>ital:同bold,</i>标签中斜体样式，,当标签中有斜体样式时</span><br><span class='mrl20'><i class='colorblack'>boldital:同bold,</i>标签中粗斜体样式,当标签中有粗斜体样式时</span><br><span class='mrl20'><i class='colorblack'>mono:同bold,</i>标签中等宽字体样式,当标签中有等宽样式时</span>"
+        "moredetail":"<span>font:{<br><span class='mrl20'><i class='colorblack'>color:String,</i></span><br><span class='mrl20'><i class='colorblack'>size:Number(14),</i></span><br><span class='mrl20'><i class='colorblack'>face:String,</i>(默认是arial；同font-family),</span><br><span class='mrl20'><i class='colorblack'>background:String,</i>（默认是undefined。标签后面用提供的颜色绘制一个背景矩形）,</span><br><span class='mrl20'><i class='colorblack'>strokeWidth:Number,</i>（默认是0。作为背景矩形的另一种选择，可以围绕文本绘制边框。当提供大于0的值时，将绘制笔画）,</span><br><span class='mrl20'><i class='colorblack'>strokeColor:String,</i>（当比划的值大于0，比划的颜色）,</span><br><span class='mrl20'><i class='colorblack'>align:String,</i>（默认center，同text-align）,</span><br><span class='mrl20'><i class='colorblack'>vadjust:String,</i>（默认0，垂直方向的字体的矫正，定位是down）,</span><br><span class='mrl20'><i class='colorblack'>multi: Boolean or String,</i>（默认false，如果false，标签被视为使用基本字体绘制的纯文本。label中的内容可能是有【<b></b><i></i>标签; eg:'《b》This《/b》】如果true或'html'标签可能是多面的，带有粗体，斜体和代码标记，则解释为html。如果值为'markdown' or 'md'标签可能是多面的，则使用粗体，斜体和代码标记，将其解释为markdown。粗体，斜体，粗体斜体和等宽字体可分别在font.bold，font.ital，font.boldital和font.mono属性下设置）,</span><br><span class='mrl20'><i class='colorblack'>bold:Object/String,</i>(eg:'14px arial red')标签中粗体样式,当标签中有粗体样式时</span><br><span class='mrl40'><i class='colorblack'>为Object：{</span><span class='mrl60'><i class='colorblack'>color:String,</i>(默认是#343434)</span><br><span class='mrl60'><i class='colorblack'>size:Number,</i>(默认是14)</span><br><span class='mrl60'><i class='colorblack'>face:String,</i>(默认是arial，字体系列)</span><br><span class='mrl60'><i class='colorblack'>mod:String,</i>(默认是bold)</span>}<br><span class='mrl60'><i class='colorblack'>vadjust:String,</i>(默认是0，对标签文本中粗体斜体字体的垂直定位进行字体特定的校正。（正向下。）默认为基本字体的valign)</span><br><span class='mrl40'></span>}<br><span class='mrl20'><i class='colorblack'>ital:同bold,</i>标签中斜体样式，,当标签中有斜体样式时</span><br><span class='mrl20'><i class='colorblack'>boldital:同bold,</i>标签中粗斜体样式,当标签中有粗斜体样式时</span><br><span class='mrl20'><i class='colorblack'>mono:同bold,</i>标签中等宽字体样式,当标签中有等宽样式时</span>"
        
     },
     {
         "name":"group",
         "type":"String",
         "default":"undefined",
-        "desc":"如果不是undefined，默认节点所属组，同组的节点【颜色或者样式】一致，样式可以通过node.shape来设置"
+        "desc":"如果不是undefined，默认节点所属组，同组的节点【颜色 or 样式】一致，样式可以通过node.shape来设置"
     },
     {
         "name":"heightConstraint",
-        "type":"Number或者Object或者是Boolean",
+        "type":"Number or Object or Boolean",
         "default":"false",
         "desc":"如果为false，则不应用heightConstraint；如果指定了数字，则该值将用作节点的最小高度。如果小于该值，节点的高度将设置为最小值。",
         "moredetail":"为对象的时候：{ minimum : Number, valign : String}。<br><span class='mrl20'>{</span><br><span class='mrl40'><i class='colorblack'>minimum:undefined,</i>(如果指定了数字，则该值将用作节点的最小高度。如果小于该值，节点的高度将设置为最小值。)</span><br><span class='mrl40'><i class='colorblack'>valign:'middle',</i>(可使用'top'，'middle'和'bottom';指定时，如果标签文本的高度小于最小值（包括任何顶部或底部边距），则它将垂直偏移到指定位置)</span><br><span class='mrl20'>}</span>"
@@ -83,9 +83,9 @@
     
     {
         "name":"image",
-        "type":"Object或者String",
+        "type":"Object or String",
         "default":"undefined",
-        "desc":"当节点的shape是【image】或者【circularImage】；值为图片的url，找不到时使用brokeImage，在没有就是默认的纯色填充",
+        "desc":"当节点的shape是【image】 or 【circularImage】；值为图片的url，找不到时使用brokeImage，在没有就是默认的纯色填充",
         "moredetail":"image:{<br><span class='mrl20'><i class='colorblack'>unselected:String,</i>(默认是undefined；未选择（默认）图像URL。)</span><br><span class='mrl20'><i class='colorblack'>selected:String,</i>(默认是undefined；所选图片网址。)</span><br>}"
     },
     {
@@ -108,7 +108,7 @@
     },
     {
         "name":"margin",
-        "type":"Number或者Object",
+        "type":"Number or Object",
         "default":"5",
         "desc":"当形状设置为box、circle、database、icon、text；label的边距",
         "moredetail":"margin:{<br><span class='mrl20'><i class='colorblack'>top:Number,</i>(默认是5)</span><br><span class='mrl20'><i class='colorblack'>bottom:Number,</i>(默认是5)</span><br><span class='mrl20'><i class='colorblack'>left:Number,</i>(默认是5)</span><br><span class='mrl20'><i class='colorblack'>right:Number,</i>(默认是5)</span><br>}"
@@ -128,7 +128,7 @@
     },
     {
         "name":"shadow",
-        "type":"Boolean或者Object",
+        "type":"Boolean or Object",
         "default":"false",
         "desc":"如果为true，则节点使用默认设置投射阴影。这可以通过提供对象来进一步细化。",
         "moredetail":"shadow:{<br><span class='mrl20'><i class='colorblack'>enabled:Booelan,</i>(默认是false,对象中的其他任何属性定义了，都会将其设置为true)</span><br><span class='mrl20'><i class='colorblack'>color:String,</i>(默认是rgba(0,0,0,0.5)，阴影颜色，支持的格式'rgb（255,255,255）'，'rgba（255,255,255,1）'和'#FFFFFF')</span><br><span class='mrl20'><i class='colorblack'>size:Number,</i>(默认是10，阴影的模糊大小)</span><br><span class='mrl20'><i class='colorblack'>x:Number,</i>(默认是5，x偏移量)</span><br><span class='mrl20'><i class='colorblack'>y:Number,</i>(默认是5，y偏移量)</span><br>}"
@@ -145,7 +145,7 @@
         "type":"Object",
         "default":"Object",
         "desc":"特定形状的节点的配置，包括具有边框的所有形状的节点、box、image/circularImage",
-        "moredetail":"shapeProperties:{<br><span class='mrl20'><i class='colorblack'>borderDashes:Array或者Boolean,</i>(默认是false,属性适用于具有边框的所有形状。您可以通过提供数组来设置破折号。数组格式：[短划线长度，间隙长度]。你也可以使用布尔值，false是禁用，而true是默认值[5,15]。)</span><br><img src='../../../images/example/dashed.jpg'/><br><span class='mrl20'><i class='colorblack'>borderRadius:Number,</i>(默认是6,此属性仅用于【box】形状。设置圆角的radius)</span><br><span class='mrl20'><i class='colorblack'>useImageSize:Boolean,</i>(默认是false,此属性仅适用于【 image 】和【 circularImage 】形状。如果为false，则使用size选项，如果为true，则使用size的大小。 重要提示：如果将其设置为true，则无法使用值选项缩放图像！)</span><br><span class='mrl20'><i class='colorblack'>interpolation:Booelan,</i>(默认是true,此属性仅适用于【 image 】和【 circularImage 】形状；缩小时对图片的重新计算，展示最好的图片)</span><br><span class='mrl20'><i class='colorblack'>useBorderWithImage:Booelan,</i>(默认是false,此属性仅适用于【 image 】形状；为true，使用node.color对象，背后会绘制一个带背景色，带边框的矩形，边框的宽度node.borderWidth会作用于所有的节点)</span>}"
+        "moredetail":"shapeProperties:{<br><span class='mrl20'><i class='colorblack'>borderDashes:Array or Boolean,</i>(默认是false,属性适用于具有边框的所有形状。您可以通过提供数组来设置破折号。数组格式：[短划线长度，间隙长度]。你也可以使用布尔值，false是禁用，而true是默认值[5,15]。)</span><br><img src='../../../images/example/dashed.jpg'/><br><span class='mrl20'><i class='colorblack'>borderRadius:Number,</i>(默认是6,此属性仅用于【box】形状。设置圆角的radius)</span><br><span class='mrl20'><i class='colorblack'>useImageSize:Boolean,</i>(默认是false,此属性仅适用于【 image 】和【 circularImage 】形状。如果为false，则使用size选项，如果为true，则使用size的大小。 重要提示：如果将其设置为true，则无法使用值选项缩放图像！)</span><br><span class='mrl20'><i class='colorblack'>interpolation:Booelan,</i>(默认是true,此属性仅适用于【 image 】和【 circularImage 】形状；缩小时对图片的重新计算，展示最好的图片)</span><br><span class='mrl20'><i class='colorblack'>useBorderWithImage:Booelan,</i>(默认是false,此属性仅适用于【 image 】形状；为true，使用node.color对象，背后会绘制一个带背景色，带边框的矩形，边框的宽度node.borderWidth会作用于所有的节点)</span>}"
     },
     {
         "name":"size",
@@ -165,7 +165,7 @@
         "type":"Object",
         "default":"object",
         "desc":"指定了value属性的值，会根据当前对象中设置的属性来缩放节点；只有启用了scaling.label.enabled：true的时候，才会缩放，因为大小时取决于标签的大小",
-        "moredetail":"只有当标签缩放启用了可扩展的有：ellipse、circle、database、box、text<br>始终可扩展为：image、circularImage、diamond、dot、star、triangle、triangleDown、hexagon、square、icon。q启用缩放时，会忽略size属性<br>scaling:{<br><span class='mrl20'><i class='colorblack'>min:Number,</i>(默认是10，如果节点具有值，则它们的大小由值，缩放函数和最小最大值确定。最小值是允许的最小值。)</span><br> <span class='mrl20'><i class='colorblack'>max:Number,</i>(默认是30，缩放时最大的大小)</span><br> <span class='mrl20'><i class='colorblack'>label:Boolean/Object,</i>(默认是Object){</span><br> <span class='mrl40'><i class='colorblack'>enabled:Boolean,</i>(默认是false，缩放标签的开关，如果定义了该对象中的其他属性，自动设置为true)</span><br> <span class='mrl40'><i class='colorblack'>min:Number,</i>(默认是14，缩放时标签的最小字体大小)</span><br> <span class='mrl40'><i class='colorblack'>max:Number,</i>(默认是30，缩放时标签的最大字体大小)</span><br> <span class='mrl40'><i class='colorblack'>maxVisible:Number,</i>(默认是30，放大时，字体会放大，当字体大小大于该值时，会隐藏label)</span><br> <span class='mrl40'><i class='colorblack'>drawThreshold:Number,</i>(默认是5，缩小时，字体大小的最低限制，和maxVisible配置使用，缩小时显示重要的节点，不让变小，或者放大时仅显示其余节点)</span><br><span class='mrl20'>}</span><br>}<br>【注意】该值时写在列表中，写在option中不起作用 <br>{id: 10, label: '10', group: 3,value:20,scaling:{label:{maxVisible:80,drawThreshold:5}}},"
+        "moredetail":"只有当标签缩放启用了可扩展的有：ellipse、circle、database、box、text<br>始终可扩展为：image、circularImage、diamond、dot、star、triangle、triangleDown、hexagon、square、icon。q启用缩放时，会忽略size属性<br>scaling:{<br><span class='mrl20'><i class='colorblack'>min:Number,</i>(默认是10，如果节点具有值，则它们的大小由值，缩放函数和最小最大值确定。最小值是允许的最小值。)</span><br> <span class='mrl20'><i class='colorblack'>max:Number,</i>(默认是30，缩放时最大的大小)</span><br> <span class='mrl20'><i class='colorblack'>label:Boolean/Object,</i>(默认是Object){</span><br> <span class='mrl40'><i class='colorblack'>enabled:Boolean,</i>(默认是false，缩放标签的开关，如果定义了该对象中的其他属性，自动设置为true)</span><br> <span class='mrl40'><i class='colorblack'>min:Number,</i>(默认是14，缩放时标签的最小字体大小)</span><br> <span class='mrl40'><i class='colorblack'>max:Number,</i>(默认是30，缩放时标签的最大字体大小)</span><br> <span class='mrl40'><i class='colorblack'>maxVisible:Number,</i>(默认是30，放大时，字体会放大，当字体大小大于该值时，会隐藏label)</span><br> <span class='mrl40'><i class='colorblack'>drawThreshold:Number,</i>(默认是5，缩小时，字体大小的最低限制，和maxVisible配置使用，缩小时显示重要的节点，不让变小， or 放大时仅显示其余节点)</span><br><span class='mrl20'>}</span><br>}<br>【注意】该值时写在列表中，写在option中不起作用 <br>{id: 10, label: '10', group: 3,value:20,scaling:{label:{maxVisible:80,drawThreshold:5}}},"
     },
     {
         "name":"value",
@@ -184,7 +184,7 @@
         "name":"x",
         "type":"Number",
         "default":"undefined",
-        "desc":"节点的初始x位置，使用分层布局的时候，根据布局改变。【注意】使用了network.stabilize()会导致布局与初始位置不同。为了锁定位置或者回显，不适用稳定布局，或者使用 【 physics 】 or  【 fixed 】 属性"
+        "desc":"节点的初始x位置，使用分层布局的时候，根据布局改变。【注意】使用了network.stabilize()会导致布局与初始位置不同。为了锁定位置 or 回显，不适用稳定布局， or 使用 【 physics 】 or  【 fixed 】 属性"
     },
     {
         "name":"y",

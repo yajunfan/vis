@@ -565,7 +565,19 @@
                     </Tabs>
                 </div>
             </Panel>
-
+            <Panel name="15">
+                <b>Cluster(集群)在option中的配置</b> 
+                <div slot="content">
+                    例如：<br>
+                    <span class="mrl20">var options = {</span> <br>
+                    <span class="mrl40">joinCondition:function(nodeOptions) {</span> <br>
+                    <span class="mrl60">return nodeOptions.cid === 1;</span>     <br>
+                    <span class="mrl40">}</span>     <br>
+                    <span class="mrl20">}</span><br>
+                    还有以下几个选项：<br>
+                    <Table :columns="nodeColumn" :data="clusterData"></Table>     
+                </div>
+            </Panel>
         </Collapse>
      
     </div>
