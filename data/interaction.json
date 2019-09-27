@@ -64,7 +64,7 @@
         "type":"Boolean",
         "default":"false",
         "desc":"如果为true，则会在网络画布上绘制导航按钮。这些是HTML按钮，可以使用CSS完全自定义。",
-        "moredetail":"<img src='../../../images/example/navagation1.jpg'><img class='mrl60' src='../../../images/example/navagation2.jpg'>"
+        "moredetail":"<img src='./images/example/navagation1.jpg'><img class='mrl60' src='./images/example/navagation2.jpg'>"
     },
     {
         "name":"tooltipDelay",

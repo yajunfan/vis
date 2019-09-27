@@ -4,14 +4,14 @@
         "type":"Boolean",
         "default":"false",
         "desc":"打开或关闭操纵系统。即使是假的，通过方法的操作API仍然可以工作。此属性是可选的。如果您定义以下任何选项并且未定义enabled，则将设置为true。",
-        "moredetail":"<img src='../../../images/example/edit.jpg'><br>点击之后<br><img src='../../../images/example/edit2.jpg'>"
+        "moredetail":"<img src='./images/example/edit.jpg'><br>点击之后<br><img src='./images/example/edit2.jpg'>"
     },
     {
         "name":"initiallyActive",
         "type":"Boolean",
         "default":"true",
         "desc":"最初是否只显示编辑按钮。",
-        "moredetail":"为true的时候，初始默认是<img src='../../../images/example/edit2.jpg'><br>为false的时候，初始默认是<img src='../../../images/example/edit.jpg'>"
+        "moredetail":"为true的时候，初始默认是<img src='./images/example/edit2.jpg'><br>为false的时候，初始默认是<img src='./images/example/edit.jpg'>"
     },
     {
         "name":"addNode",
