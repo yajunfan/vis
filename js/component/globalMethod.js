@@ -44,7 +44,7 @@ const GlobalMethod = function(resolve, reject) {
                 getEventNameFn(){
                     let this_ = this;
                     $.ajax({
-                        url:"../../../data/eventName.json",
+                        url:"./data/eventName.json",
                         success:function(data){
                             this_.eventNameData = data;
                         },

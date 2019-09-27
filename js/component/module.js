@@ -88,7 +88,7 @@ const Module = function(resolve, reject) {
                     let this_ = this;
                     if(!this_.functionFlag.nodeflag){
                         $.ajax({
-                            url:"../../../data/node.json",
+                            url:"./data/node.json",
                             success:function(data){
                                 this_.nodeData = data;
                                 this_.functionFlag.nodeflag = true;
@@ -104,7 +104,7 @@ const Module = function(resolve, reject) {
                     let this_ = this;
                     if(!this_.functionFlag.edgeflag){
                         $.ajax({
-                            url:"../../../data/edge.json",
+                            url:"./data/edge.json",
                             success:function(data){
                                 this_.edgeData = data;
                                 this_.functionFlag.edgeflag = true;
@@ -120,7 +120,7 @@ const Module = function(resolve, reject) {
                     let this_ = this;
                     if(!this_.functionFlag.layoutflag){
                         $.ajax({
-                            url:"../../../data/layout.json",
+                            url:"./data/layout.json",
                             success:function(data){
                                 this_.layoutData = data;
                                 this_.functionFlag.layoutflag = true;
@@ -136,7 +136,7 @@ const Module = function(resolve, reject) {
                     let this_ = this;
                     if(!this_.functionFlag.layoutflag){
                         $.ajax({
-                            url:"../../../data/interaction.json",
+                            url:"./data/interaction.json",
                             success:function(data){
                                 this_.interactionData = data;
                                 this_.functionFlag.interactionflag = true;
@@ -152,7 +152,7 @@ const Module = function(resolve, reject) {
                     let this_ = this;
                     if(!this_.functionFlag.manipulationflag){
                         $.ajax({
-                            url:"../../../data/manipulation.json",
+                            url:"./data/manipulation.json",
                             success:function(data){
                                 this_.manipulationData = data;
                                 this_.functionFlag.manipulationflag = true;
@@ -169,7 +169,7 @@ const Module = function(resolve, reject) {
                     let this_ = this;
                     if(!this_.functionFlag.physicsflag){
                         $.ajax({
-                            url:"../../../data/dataphysics.json",
+                            url:"./data/dataphysics.json",
                             success:function(data){
                                 this_.physicsData = data;
                                 this_.functionFlag.physicsflag = true;
@@ -185,7 +185,7 @@ const Module = function(resolve, reject) {
                     let this_ = this;
                     if(!this_.functionFlag.clusterflag){
                         $.ajax({
-                            url:"../../../data/datacluser.json",
+                            url:"./data/datacluser.json",
                             success:function(data){
                                 this_.clusterData = data;
                                 this_.functionFlag.clusterflag = true;
