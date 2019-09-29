@@ -9,7 +9,8 @@ const routes = [
       children:[
         { path: '/home',name:"home",component: Home},
         { path: '/module',name:"module",component: Module },
-        { path: '/method',name:"method",component: GlobalMethod }
+        { path: '/method',name:"method",component: GlobalMethod },
+        { path: '/eventlist',name:"eventlist",component: EventList }
       ]    
     },
     

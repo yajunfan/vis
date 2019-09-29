@@ -24,7 +24,7 @@ const Main = function(resolve, reject) {
                             icon: "ivu-icon ivu-icon-ios-laptop"
                         },
                         {
-                            id: 'Event',
+                            id: 'eventlist',
                             name: "network事件",
                             icon: "ivu-icon ivu-icon-ios-ionitron"
                         }

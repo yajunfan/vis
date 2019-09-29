@@ -1,0 +1,50 @@
+<div>   
+        <div>
+            <h3>Event事件</h3>
+            <Collapse accordion v-model="value">
+                <Panel name="1">
+                    与用户相关。
+                    例如network.on('事件名称'，function(){})
+                    <div slot="content"> 
+                        <Table :columns="eventNameColumn" :data="eventNameData"></Table>  
+                    </div>
+                </Panel>
+                <Panel name="2">
+                    2.与physics相关的事件
+                    <div slot="content">
+                        <Table :columns="eventNameColumn" :data="physicsData"></Table>  
+                    </div>
+                </Panel>
+                <Panel name="3">
+                    3.canvas相关的事件
+                    <div slot="content">
+                        <span>【 名称 】 resize</span>
+                        <span>【 描述 】动画完成后触发</span><br>
+                        <b>【 使用 】network.on('animationFinished',function(){})</b> 
+                    </div>
+                </Panel>
+                <Panel name="4">
+                    4.渲染画布的事件
+                    <div slot="content">
+                        <Table :columns="eventNameColumn" :data="renderData"></Table>  
+                    </div>
+                </Panel>
+                <Panel name="5">
+                    5.视图模块相关的事件
+                    <div slot="content">
+                        <span>【 名称 】animationFinished</span>
+                        <span>【 描述 】动画完成后触发</span><br>
+                        <b>【 使用 】network.on('animationFinished',function(){})</b> 
+                    </div>
+                </Panel>
+                <Panel name="6">
+                    5.configuration模块相关的事件
+                    <div slot="content"  class="f18">
+                        <span>【 名称 】configChange</span>
+                        <span>【 描述 】当用户更改配置中的任何选项触发(更改具体的每一项)。 （）的选项对象可以与setOptions方法透过JSON.stringify使用或字符串化。您不必手动将选项加入到网络：这是自动完成的。您可以使用该事件存储在数据库中的用户选项。</span><br>
+                        <b>【 使用 】network.on('configChange',function(){})</b>
+                    </div>
+                </Panel>
+            </Collapse>
+        </div>
+    </div>
