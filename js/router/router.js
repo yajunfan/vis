@@ -10,7 +10,8 @@ const routes = [
         { path: '/home',name:"home",component: Home},
         { path: '/module',name:"module",component: Module },
         { path: '/method',name:"method",component: GlobalMethod },
-        { path: '/eventlist',name:"eventlist",component: EventList }
+        { path: '/eventlist',name:"eventlist",component: EventList },
+        { path: '/example',name:"example",component: Example }
       ]    
     },
     

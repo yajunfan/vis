@@ -4,10 +4,10 @@ const GlobalMethod = function(resolve, reject) {
             template: res,
             data: function() {
                 return{
-                    valueglobal:"10",
+                    valueglobal:"3",
                     value1:"",
                     value2:"",
-                    value3:"",
+                    value3:"3",
                     value4:"",
                     value5:"",
                     value6:"",

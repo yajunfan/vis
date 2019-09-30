@@ -121,45 +121,78 @@
                     <Collapse  accordion v-model="value3">
                         <Panel name="1">
                             <b> cluster({Object options})</b>
-                            <p slot="content" class="f18">
-                                <span>【 描述 】从DOM中删除network并删除所有Hammer绑定和引用,销毁该实例</span><br>
+                            <div slot="content" class="f18">
+                                <span>【 描述 】参数option参考【配置module】=>【Cluster(集群)在option中的配置】。给出了包含所有节点的joinCondition函数。</span><br>
                                 <span class='cred'>【 返回 】return:none</span><br>
-                                <b>【 使用 】var clusterOptionsByData = {
-                                        joinCondition:function(childOptions) {
-                                            return childOptions.cid == 1;
-                                        },
-                                        clusterNodeProperties: {id:'cidCluster', borderWidth:3, shape:'database'}
-                                    };
-                                    network.cluster(clusterOptionsByData);</b> </p>
+                                <div>【 使用 】var clusterOptionsByData = {<br>
+                                    <span class="mrl80 cred">joinCondition</span> :function(childOptions) {</span> <br>
+                                    <span class="mrl100">return childOptions.cid == 1;</span> <br>
+                                    <span class="mrl80">},</span> <br>
+                                    <span class="mrl80 cred">clusterNodeProperties:</span> {id:'cidCluster', borderWidth:3, shape:'database'} <br>
+                                    <span class="mrl80">}; </span><br>
+                                    <b class="mrl80">network.cluster(clusterOptionsByData);</b>  <br>
+                                    <span class="mrl80">这例子是将页面上节点中有cid属性，并且属性为1的点的进行了集群</span>
+                                    <img src="./images/example/cluser.jpg" alt="原始数据">
+                                </div>
+                            </div>
                         </Panel>
                         <Panel name="2">
                             <b>clusterByConnection(nodeid,{Object options})</b>
                             <p slot="content" class="f18">
-                                <span>【 描述 】对network上的所有数据的格式化，如果物理模块中启用了稳定，则network将再次稳定。首次初始化network时也会执行此方法</span><br>
+                                <span>【 描述 】将与节点id连接的所有节点组成一个集群，第二个参数option参考【配置module】=>【Cluster(集群)在option中的配置】</span><br>
                                 <span>【 返回 】return:none</span><br>
-                                <b>【 使用 】var nodes = new vis.DataSet ([ {id: 1, label: 'Node 1'}, {id: 2, label: 'Node 2'}, {id: 3, label: 'Node 3'}]);</b> </p>
+                                <b>【 使用 】<br>
+                                    <span class="mrl80">var data = {
+                                            nodes: nodes,
+                                            edges: edges
+                                        };</span><br>
+                                    <span class="mrl80">network.setData(data);  </span><br>
+                                    <span class="mrl80">network.clusterByConnection(节点id);</span>
+                                    <img src="./images/example/clusterByConnection.png" alt="clusterByConnection方法">
+                                </b>
                             </p>
                         </Panel>
                         <Panel name="3">
                             <b>clusterByHubsize([Number hubsize],{Object options})</b>
-                            <p slot="content" class="f18">
-                                <span>【 描述 】对network上的所有数据的格式化，如果物理模块中启用了稳定，则network将再次稳定。首次初始化network时也会执行此方法</span><br>
+                            <div slot="content" class="f18">
+                                <span>【 描述 】此方法检查网络中的所有节点，以及具有与【第一个参数】指定的边缘数量【相等或更多】的节点组成集群；如果第一个参数是undedined，<br>
+                                    <span class="mrl80">则Number将确定为平均值加上两个标准差。（貌似是找的连接节点最多的那个节点），参数option参考【配置module】=>【Cluster(集群)在option中的配置】</span><br>
+                                    <b><span class="mrl80">两个参数都是可传可不传的</span></b> 
+                                </span><br>
                                 <span>【 返回 】return:none</span><br>
-                                <b>【 使用 】var nodes = new vis.DataSet ([ {id: 1, label: 'Node 1'}, {id: 2, label: 'Node 2'}, {id: 3, label: 'Node 3'}]);</b> </p>
-                            </p>
+                                <span>【 使用 】</span><br>
+                                <span class="mrl60">var data = { nodes: nodes, edges: edges };</span><br>
+                                <span class="mrl60">network.setData(data);  </span><br>
+                                <div class="mrl60">var clusterOptionsByData = {<br>
+                                    <span class="mrl60 cred">processProperties</span> :function(clusterOptions, childNodes) {</span> <br>
+                                    <span class="mrl80">clusterOptions.label = "[" + childNodes.length + "]";(只是设置样式)</span> <br>
+                                    <span class="mrl80">return clusterOptions;</span> <br>
+                                    <span class="mrl60">},</span> <br>
+                                    <span class="mrl60 cred">clusterNodeProperties:</span> {borderWidth:3, shape:'box', font:{size:30}} <br>
+                                    <span class="mrl60">}; </span><br>
+                                    <b class="mrl60">network.clusterByHubsize(undefined, clusterOptionsByData);</b>  <br>
+                                    <span class="mrl60">两个参数都可以可选参数</span>
+                                    <img src="./images/example/clusterByHubsize.png" alt="原始数据">
+                                </div>
+                            </div>
                         </Panel>
                         <Panel name="4">
                             <b>clusterOutliers({Object options})</b> 
-                            <div slot="content" class="f18">
-                                <span>【 描述 】对network上的所有数据的格式化，如果物理模块中启用了稳定，则network将再次稳定。首次初始化network时也会执行此方法</span><br>
+                            <div slot="content" class="f18"> 
+                                <span>【 描述 】该方法将所有具有1条边的节点及其各自连接的节点聚类到一起。参数option参考【配置module】=>【Cluster(集群)在option中的配置】</span><br>
                                 <span>【 返回 】return:none</span><br>
-                                <b>【 使用 】var nodes = new vis.DataSet ([ {id: 1, label: 'Node 1'}, {id: 2, label: 'Node 2'}, {id: 3, label: 'Node 3'}]);</b> </p>
+                                <b>【 使用 】network.setData(data);
+                                        network.clusterOutliers();</b>
+                                <img src="./images/example/clusterOutliers.png" alt="原始数据">
                             </div>
                         </Panel>
                         <Panel name="5">
                             <b>findNode(String/Number nodeId)</b> 
                             <div slot="content" class="f18">
-                                <span>【 描述 】对network上的所有数据的格式化，如果物理模块中启用了稳定，则network将再次稳定。首次初始化network时也会执行此方法</span><br>
+                                <span>【 描述 】节点可以在集群中。集群也可以在集群中。这个函数返回一个节点id数组，显示节点的位置。
+                                    <span class="mrl80">如果链中的任何节点id(特别是作为参数传递的第一个节点)不在当前节点列表中，则返回一个空数组。</span>
+                                    <span class="mrl80">例如:cluster 'A'包含cluster 'B'， cluster 'B'包含cluster 'C'， cluster 'C'包含node 'fred'。</span>
+                                </span><br>
                                 <span>【 返回 】return:none</span><br>
                                 <b>【 使用 】var nodes = new vis.DataSet ([ {id: 1, label: 'Node 1'}, {id: 2, label: 'Node 2'}, {id: 3, label: 'Node 3'}]);</b> </p>
                             </div>

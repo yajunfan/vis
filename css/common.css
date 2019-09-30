@@ -42,6 +42,9 @@ span,i,b{
 .mrl80{
   margin-left: 80px;
 }
+.mrl100{
+  margin-left: 100px;
+}
 .mrr10{
   margin-right: 10px;
 }
@@ -119,5 +122,9 @@ span,i,b{
   color: #e4e0e0;
   background: #2d8cf0;
 }
-
+#mynetwork {
+  width:100%;
+  height:860px;
+  border: 1px solid lightgray;
+}
 

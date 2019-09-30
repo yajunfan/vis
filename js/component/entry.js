@@ -27,6 +27,11 @@ const Main = function(resolve, reject) {
                             id: 'eventlist',
                             name: "network事件",
                             icon: "ivu-icon ivu-icon-ios-ionitron"
+                        },
+                        {
+                            id: 'example',
+                            name: "红楼梦关系图",
+                            icon: "ivu-icon ivu-icon-ios-link"
                         }
                     ]
                 }
