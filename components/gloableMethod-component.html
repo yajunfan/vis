@@ -116,7 +116,7 @@
                 </div>
             </Panel>
             <Panel name="3">
-                3.Clustering(集群)相关的方法
+                3.Clustering(集群)相关的方法 -- 一部分方法无法得到验证与使用
                 <div slot="content">
                     <Collapse  accordion v-model="value3">
                         <Panel name="1">
@@ -189,36 +189,40 @@
                         <Panel name="5">
                             <b>findNode(String/Number nodeId)</b> 
                             <div slot="content" class="f18">
-                                <span>【 描述 】节点可以在集群中。集群也可以在集群中。这个函数返回一个节点id数组，显示节点的位置。
+                                <span>【 描述 】节点可以在集群中。集群也可以在集群中。这个函数返回一个【节点id数组】，显示节点的位置。
                                     <span class="mrl80">如果链中的任何节点id(特别是作为参数传递的第一个节点)不在当前节点列表中，则返回一个空数组。</span>
                                     <span class="mrl80">例如:cluster 'A'包含cluster 'B'， cluster 'B'包含cluster 'C'， cluster 'C'包含node 'fred'。</span>
                                 </span><br>
-                                <span>【 返回 】return:none</span><br>
-                                <b>【 使用 】var nodes = new vis.DataSet ([ {id: 1, label: 'Node 1'}, {id: 2, label: 'Node 2'}, {id: 3, label: 'Node 3'}]);</b> </p>
+                                <span>【 返回 】return:Array</span><br>
+                                <b>【 使用 】network.clustering.findNode(5);</b> </p>
                             </div>
                         </Panel>
                         <Panel name="6">
-                            <b>getClusteredEdges([Number hubsize],{Object options})</b>
+                            <b>getClusteredEdges(String edgeId)</b>
                             <p slot="content" class="f18">
-                                <span>【 描述 】对network上的所有数据的格式化，如果物理模块中启用了稳定，则network将再次稳定。首次初始化network时也会执行此方法</span><br>
-                                <span>【 返回 】return:none</span><br>
-                                <b>【 使用 】var nodes = new vis.DataSet ([ {id: 1, label: 'Node 1'}, {id: 2, label: 'Node 2'}, {id: 3, label: 'Node 3'}]);</b> </p>
+                                <span>【 描述 】与findNode相似的是，它返回在集群期间从提供的边缘创建的所有边缘id，有就返回，没有就是[]</span><br>
+                                <span>【 返回 】return:Array</span><br>
+                                <b>【 使用 】var ary = network.clustering.getClusteredEdges(edgeid);</b><br>
+                                <span class="mrl80">ary = ["clusterEdge:307779c3-5516-4830-b30d-0b7cbc1b765d", "clusterEdge:2eb4d245-3b26-4191-80a6-a92afc731f86", 4]</span>
                             </p>
                         </Panel>
                         <Panel name="7">
-                            <b>getBaseEdge({Object options})</b> 
+                            <b>getBaseEdge(String clusteredEdgeId)</b> 
                             <div slot="content" class="f18">
-                                <span>【 描述 】对network上的所有数据的格式化，如果物理模块中启用了稳定，则network将再次稳定。首次初始化network时也会执行此方法</span><br>
+                                <span>【 描述 】这种方法是不赞成的。请使用getBaseEdges()。这里是集群的边，根据option中的clusterEdgeProperties中设置，如果没有设置，就使用edges中的id
+                                    <br>原本解释： 当clusteredEdgeId可用时，此方法将返回data.edges中提供的原始baseEdgeId；ie。在集群之后，'SelectEdge'事件被触发，但只提供集群边缘。然后可以使用此方法返回baseEdgeId。
+                                </span><br>
                                 <span>【 返回 】return:none</span><br>
-                                <b>【 使用 】var nodes = new vis.DataSet ([ {id: 1, label: 'Node 1'}, {id: 2, label: 'Node 2'}, {id: 3, label: 'Node 3'}]);</b> </p>
+                                <b>【 使用 】var ary =  network.clustering.getBaseEdge("20") ; 如果edge或者集群中的id存在，返回当前id，反之返回undefined</b>
                             </div>
                         </Panel>
                         <Panel name="8">
-                            <b>getBaseEdges(String/Number nodeId)</b> 
+                            <b>getBaseEdges(String clusteredEdgeId)</b> 
                             <div slot="content" class="f18">
-                                <span>【 描述 】对network上的所有数据的格式化，如果物理模块中启用了稳定，则network将再次稳定。首次初始化network时也会执行此方法</span><br>
+                                <span>【 描述 】原本解释：对于给定的clusteredEdgeId，此方法将返回data.edges中提供的所有原始基边id。对于非集群的(即'base') edge, clusteredEdgeId返回。只返回基边id。
+                                    所有聚集的边缘id在clusteredEdgeId下都被跳过，但是递归地扫描以返回它们的基本id</span><br>
                                 <span>【 返回 】return:none</span><br>
-                                <b>【 使用 】var nodes = new vis.DataSet ([ {id: 1, label: 'Node 1'}, {id: 2, label: 'Node 2'}, {id: 3, label: 'Node 3'}]);</b> </p>
+                                <b>【 使用 】var ary =  network.clustering.getBaseEdges("20") ;;</b> </p>
                             </div>
                         </Panel>
                         <Panel name="9">
@@ -238,17 +242,18 @@
                             </div>
                         </Panel>
                         <Panel name="11">
-                            <b>isCluster({Object options})</b> 
+                            <b>isCluster(String/Number nodeId)</b> 
                             <div slot="content" class="f18">
-                                <span>【 描述 】对network上的所有数据的格式化，如果物理模块中启用了稳定，则network将再次稳定。首次初始化network时也会执行此方法</span><br>
-                                <span>【 返回 】return:none</span><br>
-                                <b>【 使用 】var nodes = new vis.DataSet ([ {id: 1, label: 'Node 1'}, {id: 2, label: 'Node 2'}, {id: 3, label: 'Node 3'}]);</b> </p>
+                                <span>【 描述 】如果提供的id是集群中的id，则返回true。</span><br>
+                                <span>【 返回 】return:Boolean</span><br>
+                                <b>【 使用 】network.isCluster(String/Number nodeId)</b> 
+                                <img src="./images/example/iscluster.jpg" alt="集群">
                             </div>
                         </Panel>
                         <Panel name="12">
-                            <b>getNodesInCluster(String/Number nodeId)</b> 
+                            <b>getNodesInCluster(String clusterNodeId)</b> 
                             <div slot="content" class="f18">
-                                <span>【 描述 】对network上的所有数据的格式化，如果物理模块中启用了稳定，则network将再次稳定。首次初始化network时也会执行此方法</span><br>
+                                <span>【 描述 】返回打开集群时释放的所有节点的节点id的数组</span><br>
                                 <span>【 返回 】return:none</span><br>
                                 <b>【 使用 】var nodes = new vis.DataSet ([ {id: 1, label: 'Node 1'}, {id: 2, label: 'Node 2'}, {id: 3, label: 'Node 3'}]);</b> </p>
                             </div>

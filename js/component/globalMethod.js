@@ -7,7 +7,7 @@ const GlobalMethod = function(resolve, reject) {
                     valueglobal:"3",
                     value1:"",
                     value2:"",
-                    value3:"3",
+                    value3:"7",
                     value4:"",
                     value5:"",
                     value6:"",

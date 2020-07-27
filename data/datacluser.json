@@ -1,30 +1,30 @@
 [
     {
-        "name":"joinCondition",
+        "name":"joinCondition()",
         "type":"Function",
         "default":"joinCondition(nodeOptions: Object) or joinCondition(parentNodeOptions: Object,childNodeOptions: Object)",
-        "desc":"",
+        "desc":"根据一定的规则，将符合规则的节点形成一个集群",
         "moredetail":""
     },
     {
         "name":"processProperties",
         "type":"Function",
         "default":"processProperties(clusterOptions: Object,childNodesOptions: Array,childEdgesOptions: Array)",
-        "desc":"",
+        "desc":"对形成的集群进行配置属性和特性样式等",
         "moredetail":""
     },
     {
         "name":"clusterNodeProperties",
         "type":"Object",
         "default":"Object",
-        "desc":"",
+        "desc":"对形成集群的节点进行配置（参考options中的nodes的配置），例如 clusterNodeProperties: {id:'cidCluster', borderWidth:3, shape:'database'}",
         "moredetail":""
     },
     {
         "name":"clusterEdgeProperties",
         "type":"Object",
         "default":"Object",
-        "desc":"",
+        "desc":"对形成集群的节点的边进行配置（参考options中的edges的配置），例如 clusterEdgeProperties: {id:'cidCluster', width:3}",
         "moredetail":""
     }
 ]
