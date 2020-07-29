@@ -31,8 +31,8 @@ const Example = function(resolve, reject) {
                       layout: {
                         hierarchical: {
                             levelSeparation:800,
-                            nodeSpacing:300,
-                        //   sortMethod: this.layoutMethod,
+                            nodeSpacing:340,
+                          sortMethod: this.layoutMethod,
                         //   direction:"LR"
                         }
                       },
