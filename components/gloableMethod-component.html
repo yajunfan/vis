@@ -11,14 +11,14 @@
                             <b> destroy()</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】从DOM中删除network并删除所有Hammer绑定和引用,销毁该实例</span><br>
-                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span class='ctip'>【 返回 】return:none</span><br>
                                 <b>【 使用 】network.destory()</b> </p>
                         </Panel>
                         <Panel name="2">
                             <b>setData({nodes:vis.DataSet[nodeary],edges:vis.DataSet[edgeary]})</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】对network上的所有数据的格式化，如果物理模块中启用了稳定，则network将再次稳定。首次初始化network时也会执行此方法</span><br>
-                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span class='ctip'>【 返回 】return:none</span><br>
                                 <b>【 使用 】var nodes = new vis.DataSet ([ {id: 1, label: 'Node 1'}, {id: 2, label: 'Node 2'}, {id: 3, label: 'Node 3'}]);</b> </p>
                             </p>
                         </Panel>
@@ -26,7 +26,7 @@
                             <b>setOptions(Object)</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】设置option,这是全局的修改options的配置，不针对与某一个节点，作用于整个network</span><br>
-                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span class='ctip'>【 返回 】return:none</span><br>
                                 <b>【 使用 】network.setOptions(option)</b><br>
                                 eg：<img src="./images/example/setoption.jpg" alt="设置option">
                             </p>
@@ -35,7 +35,7 @@
                             <b>on(String event name, Function callback)</b> 
                             <div slot="content" class="f18">
                                 <span>【 描述 】监听事件</span><br>
-                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span class='ctip'>【 返回 】return:none</span><br>
                                 <span>
                                     【 使用 】network.on("doubleClick", function (params) { console.log("doubleClick",params) }) 设置事件监听器;
                                 </span><br>
@@ -47,7 +47,7 @@
                             <b>off(String event name, Function callback)</b> 
                             <div slot="content" class="f18">
                                 <span>【 描述 】撤销监听事件</span><br>
-                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span class='ctip'>【 返回 】return:none</span><br>
                                 <span>
                                     【 使用 】network.off("doubleClick");删除事件监听器，在次代码之前的该事件取消执行，如果没有提供事件名称，如'doubleClick',那就是将所有的network上绑定的事件取消<br>
                                 </span>
@@ -57,7 +57,7 @@
                             <b>once(String event name, Function callback)</b> 
                             <div slot="content" class="f18">
                                 <span>【 描述 】只执行一次监听事件</span><br>
-                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span class='ctip'>【 返回 】return:none</span><br>
                                 <span>
                                     【 使用 】network.once("click",function(params){});以click事件为利，只执行第一次，之后不再执行。发生之后，事件监听器将被删除<br>
                                 </span>
@@ -74,14 +74,14 @@
                             <b> canvasToDOM({x:Number,y:Number})</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】此函数将画布坐标转换为DOM上的坐标。输入和输出的形式为{x：Number，y：Number}。 DOM值是相对于网络容器的</span><br>
-                                <span class='cred'>【 返回 】return:Object {x:100,y:100}</span><br>
+                                <span class='ctip'>【 返回 】return:Object {x:100,y:100}</span><br>
                                 <b>【 使用 】var obj=network.canvasToDOM({x:itempos.x,y:itempos.y}); </b> </p>
                         </Panel>
                         <Panel name="2">
                             <b>DOMtoCanvas({x:Number,y:Number})</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】此函数将DOM坐标转换为画布上的坐标。输入和输出的形式为{x：Number，y：Number}。 DOM值是相对于网络容器的</span><br>
-                                <span class='cred'>【 返回 】return:Object  {x:100,y:100}</span><br>
+                                <span class='ctip'>【 返回 】return:Object  {x:100,y:100}</span><br>
                                 <b>【 使用 】var obj=network.DOMtoCanvas({x:itempos.x,y:itempos.y});</b> </p>
                             </p>
                         </Panel>
@@ -89,7 +89,7 @@
                             <b>redraw()</b>
                             <div slot="content" class="f18">
                                 <span>【 描述 】重绘network，执行此事件的时候，会一同执行以下三个事件，我们在以下三个事件中做需要的功能逻辑</span><br>
-                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span class='ctip'>【 返回 】return:none</span><br>
                                 <b>【 使用 】network.redraw()</b><br>
                                 <div>
                                     <p>同时要执行以下三件事</p>
@@ -108,7 +108,7 @@
                             <b>setSize(String width, String height)</b> 
                             <div slot="content" class="f18">
                                 <span>【 描述 】设置画布的大小（canvas的宽高）</span><br>
-                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span class='ctip'>【 返回 】return:none</span><br>
                                 <span>【 使用 】network.setSize('1200','600');</span><br>
                             </div>
                         </Panel>
@@ -123,12 +123,12 @@
                             <b> cluster({Object options})</b>
                             <div slot="content" class="f18">
                                 <span>【 描述 】参数option参考【配置module】=>【Cluster(集群)在option中的配置】。给出了包含所有节点的joinCondition函数。</span><br>
-                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span class='ctip'>【 返回 】return:none</span><br>
                                 <div>【 使用 】var clusterOptionsByData = {<br>
-                                    <span class="mrl80 cred">joinCondition</span> :function(childOptions) {</span> <br>
+                                    <span class="mrl80 ctip">joinCondition</span> :function(childOptions) {</span> <br>
                                     <span class="mrl100">return childOptions.cid == 1;</span> <br>
                                     <span class="mrl80">},</span> <br>
-                                    <span class="mrl80 cred">clusterNodeProperties:</span> {id:'cidCluster', borderWidth:3, shape:'database'} <br>
+                                    <span class="mrl80 ctip">clusterNodeProperties:</span> {id:'cidCluster', borderWidth:3, shape:'database'} <br>
                                     <span class="mrl80">}; </span><br>
                                     <b class="mrl80">network.cluster(clusterOptionsByData);</b>  <br>
                                     <span class="mrl80">这例子是将页面上节点中有cid属性，并且属性为1的点的进行了集群</span>
@@ -164,11 +164,11 @@
                                 <span class="mrl60">var data = { nodes: nodes, edges: edges };</span><br>
                                 <span class="mrl60">network.setData(data);  </span><br>
                                 <div class="mrl60">var clusterOptionsByData = {<br>
-                                    <span class="mrl60 cred">processProperties</span> :function(clusterOptions, childNodes) {</span> <br>
+                                    <span class="mrl60 ctip">processProperties</span> :function(clusterOptions, childNodes) {</span> <br>
                                     <span class="mrl80">clusterOptions.label = "[" + childNodes.length + "]";(只是设置样式)</span> <br>
                                     <span class="mrl80">return clusterOptions;</span> <br>
                                     <span class="mrl60">},</span> <br>
-                                    <span class="mrl60 cred">clusterNodeProperties:</span> {borderWidth:3, shape:'box', font:{size:30}} <br>
+                                    <span class="mrl60 ctip">clusterNodeProperties:</span> {borderWidth:3, shape:'box', font:{size:30}} <br>
                                     <span class="mrl60">}; </span><br>
                                     <b class="mrl60">network.clusterByHubsize(undefined, clusterOptionsByData);</b>  <br>
                                     <span class="mrl60">两个参数都可以可选参数</span>
@@ -277,7 +277,7 @@
                             <b> getSeed()</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】当节点中没有x，y，network生成的随机的节点分布，会有一个seed值，我们可以通过该方法获取到。当下次希望仍然以这个布局展示的话，可以在layout.randomSeed中设置</span><br>
-                                <span class='cred'>【 返回 】return:Number</span><br>
+                                <span class='ctip'>【 返回 】return:Number</span><br>
                                 <b >【 使用 】var seed = network.getSeed();获取seed值</b> <br><b class="mrl80">layout.randomSeed = seed;设置seed值</b></p>
                         </Panel>
                     </Collapse>
@@ -291,7 +291,7 @@
                             <b>getPositions([节点id1,节点id2])</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】获取节点的canvas的位置</span><br>
-                                <span class='cred'>【 返回 】return:Object {<br>
+                                <span class='ctip'>【 返回 】return:Object {<br>
                                     <span class="mrl40">节点id1:{x: -115, y: 52},</span><br><span class="mrl40">节点id2:{x: -115, y: 52}</span><br>}</span><br>
                                 <b>【 使用 】var obj=network.getPositions([节点id1,节点id2]);<br>var x = obj[0].x</b>
                             </p>
@@ -306,21 +306,21 @@
                                     <br>
                                     <b>此方法不支持集群。目前，它使用群集时，因为他们不能正确地从刚才的位置初始化是不可能的缓存位置。</b> 
                                 </span><br>
-                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span class='ctip'>【 返回 】return:none</span><br>
                                 <b>【 使用 】network.storePositions()</b> </p>
                         </Panel>
                         <Panel name="3">
                             <b> moveNode(节点id,x,y)</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】手动移动画布中的节点,</span><br>
-                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span class='ctip'>【 返回 】return:none</span><br>
                                 <b>【 使用 】network.moveNode(节点id,x,y)<br><span class="mrl80">x:要移动的x位置 <br>y:要移动的y位置</span></b></p>
                         </Panel>
                         <Panel name="4">
                             <b> getBoundingBox(节点id)</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】返回包含标签的节点的边界框(canvas坐标，且将标签算在内,根据shape的不同，标签在节点的里边或者外边)</span><br>
-                                <span class='cred'>【 返回 】return:object{<br>
+                                <span class='ctip'>【 返回 】return:object{<br>
                                     <span class="mrl40">top: -115, bottom: 5,left:0,right:0</span><br>}
                                 </span><br>
                                 <b>【 使用 】network.getBoundingBox(节点id)</b> </p>
@@ -328,19 +328,19 @@
                         <Panel name="5">
                             <b> getConnectedNodes(节点id或者边id,direction)</b>
                             <p slot="content" class="f18">
-                                <span>【 描述 】如果传的是<span class="cred">节点id，</span>那么返回的是 【 与该节点连接的所有的节点的id组成的数组（包括隐藏的，不在画布上显示的节点id）】
+                                <span>【 描述 】如果传的是<span class="ctip">节点id，</span>那么返回的是 【 与该节点连接的所有的节点的id组成的数组（包括隐藏的，不在画布上显示的节点id）】
                                         并且如果不传第二个参数，默认是from。<br><b class="mrl80"> from:返回的是 所有指向该节点的节点id集合</b>，
                                         <br><b class="mrl80">如果是to，那么返回的是该节点指向的节点id集合</b>
-                                        <br><span  class="mrl80">如果传的是 <span class="cred">边缘id，</span> 那么返回的是 【 该边缘所连接的两个节点的id集合 】</span>
+                                        <br><span  class="mrl80">如果传的是 <span class="ctip">边缘id，</span> 那么返回的是 【 该边缘所连接的两个节点的id集合 】</span>
                                 </span><br>
-                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span class='ctip'>【 返回 】return:none</span><br>
                                 <b>【 使用 】network.getConnectedNodes(节点id或者边缘id,direction)  ===>direction为from或者to</b> </p>
                         </Panel>
                         <Panel name="6">
                             <b> getConnectedEdges(节点id)</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】传的值是 节点id，获取的是与该节点连接的边的id数组集合</span><br>
-                                <span class='cred'>【 返回 】return:Array</span><br>
+                                <span class='ctip'>【 返回 】return:Array</span><br>
                                 <b>【 使用 】network.getConnectedEdges(节点id)</b> </p>
                         </Panel> 
                     </Collapse>
@@ -354,7 +354,7 @@
                             <b> startSimulation()</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】启用物理模拟，通常在需要的时候完成的；只有在自己停止模拟，并希望继续模拟的时候，才真正有用</span><br>
-                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span class='ctip'>【 返回 】return:none</span><br>
                                 <b>【 使用 】network.startSimulation()</b> 
                             </p>
                         </Panel>
@@ -362,7 +362,7 @@
                             <b> stopSimulation()</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】停止物理模拟并且触发stabilize()事件，可以通过拖动节点、更改数据集或调用startSimulation()重新启动它。</span><br>
-                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span class='ctip'>【 返回 】return:none</span><br>
                                 <b>【 使用 】network.stopSimulation()</b> 
                             </p>
                         </Panel>
@@ -370,7 +370,7 @@
                             <b> stabilize()</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】将当前的画布节点的稳定</span><br>
-                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span class='ctip'>【 返回 】return:none</span><br>
                                 <b>【 使用 】network.stabilize()</b> 
                             </p>
                         </Panel>
@@ -385,7 +385,7 @@
                             <b> getSelection()</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】获取的是当前画布上选中的节点 和 边</span><br>
-                                <span class='cred'>【 返回 】return:object  ==== > {nodes:[nodeid1,nodeid2],edges:[edgeid1,edgeid2]}</span><br>
+                                <span class='ctip'>【 返回 】return:object  ==== > {nodes:[nodeid1,nodeid2],edges:[edgeid1,edgeid2]}</span><br>
                                 <b>【 使用 】network.getSelection()</b> 
                             </p>
                         </Panel>
@@ -393,7 +393,7 @@
                             <b> getSelectedNodes()</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】获取的是当前画布上选中的节点</span><br>
-                                <span class='cred'>【 返回 】return:Array  ==== > [nodeid1,nodeid2]</span><br>
+                                <span class='ctip'>【 返回 】return:Array  ==== > [nodeid1,nodeid2]</span><br>
                                 <b>【 使用 】network.getSelectedNodes()</b> 
                             </p>
                         </Panel>
@@ -401,7 +401,7 @@
                             <b> getSelectedEdges()</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】获取的是当前画布上选中的边</span><br>
-                                <span class='cred'>【 返回 】return:Array  ==== > [edgeid1,edgeid2]</span><br>
+                                <span class='ctip'>【 返回 】return:Array  ==== > [edgeid1,edgeid2]</span><br>
                                 <b>【 使用 】network.getSelectedEdges()</b>
                             </p>
                         </Panel>
@@ -409,7 +409,7 @@
                             <b> getNodeAt({x: xPosition DOM, y: yPosition DOM})</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】获取的是传入的该位置的节点id（位置是从画布的左上角开始计算，DOM位置），该位置上有就返回 节点id，没有就返回undefined</span><br>
-                                <span class='cred'>【 返回 】return:string or undefined</span><br>
+                                <span class='ctip'>【 返回 】return:string or undefined</span><br>
                                 <b>【 使用 】network.getNodeAt({x: xPosition DOM, y: yPosition DOM})</b> 
                             </p>
                         </Panel>
@@ -417,7 +417,7 @@
                             <b> getEdgeAt({x: xPosition DOM, y: yPosition DOM})</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】获取的是传入的该位置的边id（位置是从画布的左上角开始计算，DOM位置），该位置上有就返回 边id，没有就返回undefined</span><br>
-                                <span class='cred'>【 返回 】return:string or undefined</span><br>
+                                <span class='ctip'>【 返回 】return:string or undefined</span><br>
                                 <b>【 使用 】network.getEdgeAt({x: xPosition DOM, y: yPosition DOM})</b> 
                             </p>
                         </Panel>
@@ -425,7 +425,7 @@
                             <b> selectNodes(Array with nodeIds,[Boolean highlightEdges])</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】设置节点的选中集合，第二个参数（可选）是与选中的节点连接的边是否高亮，默认是true;不会触发事件</span><br>
-                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span class='ctip'>【 返回 】return:none</span><br>
                                 <b>【 使用 】network.selectNodes([nodeid1,nodeid2])</b> 
                             </p>
                         </Panel>
@@ -433,7 +433,7 @@
                             <b> selectEdges(Array with edgeIds)</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】设置边缘的选中集合；不会触发事件</span><br>
-                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span class='ctip'>【 返回 】return:none</span><br>
                                 <b>【 使用 】network.getEdgeAt({x: xPosition DOM, y: yPosition DOM})</b> 
                             </p>
                         </Panel>
@@ -444,7 +444,7 @@
                                     <span class="mrl80">第二个参数是对选中的节点和边的配置{unselectAll: Boolean,highlightEdges: Boolean}</span> <br>
                                     <span class="mrl80">这个highlightEdges属性只是针对【 与选中节点关联的边 】 的高亮配置，对设置选中的边（第一个参数中的edges中的值中选中的边）的高亮不会起作用</span>
                                 </span><br>
-                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span class='ctip'>【 返回 】return:none</span><br>
                                 <b>【 使用 】network.setSelection(Object selection,[Object options])</b> 
                             </p>
                         </Panel>
@@ -452,7 +452,7 @@
                             <b> unselectAll()</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】取消所有选中的对象；不会触发事件</span><br>
-                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span class='ctip'>【 返回 】return:none</span><br>
                                 <b>【 使用 】network.unselectAll()</b> 
                             </p>
                         </Panel>
@@ -467,7 +467,7 @@
                             <b> getScale()</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】返回network的当前缩放率。 默认是1.0相当于100％，0被无限期地缩小。</span><br>
-                                <span class='cred'>【 返回 】return:Number</span><br>
+                                <span class='ctip'>【 返回 】return:Number</span><br>
                                 <b>【 使用 】network.getScale()</b> 
                             </p>
                         </Panel>
@@ -475,7 +475,7 @@
                             <b>  getViewPosition()</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】返回视图中的中央节点的数据对象。</span><br>
-                                <span class='cred'>【 返回 】return:Object ===>{ x: Number, y: Number}</span><br>
+                                <span class='ctip'>【 返回 】return:Object ===>{ x: Number, y: Number}</span><br>
                                 <b>【 使用 】network.getViewPosition()</b> 
                             </p>
                         </Panel>
@@ -485,7 +485,7 @@
                                 <span>【 描述 】缩小使所有节点都在画布上，传参是对画布的节点的配置；节点可用于缩放，以只适合视图中的特定节点。<br>
                                     <span class="mrl80">参数：{nodes:[节点id],animation:boolean/object}； animation为对象的时候{duration: Number,easingFunction: String}</span>
                                 </span><br>
-                                <span class='cred'>【 返回 】return:None</span><br>
+                                <span class='ctip'>【 返回 】return:None</span><br>
                                 <b>【 使用 】network.fit({nodes:[0,1,2,3,4],animation:{duration:3000,easingFunction:"easeInCubic"}})</b> <br>
                                 <span>【 补充 】其他的属性在moveTo中解释，所有的这些属性都是可选的,在一个地方只执行一次；比如在dragger事件中，只在第一次拖拽的时候执行</span>
                             </p>
@@ -499,7 +499,7 @@
                                     <span class="mrl80">animation:boolean/object  (animation为对象的时候{duration: Number,easingFunction: String}})</span><br>
                                     <span class="mrl80">}；</span>
                                 </span><br>
-                                <span class='cred'>【 返回 】return:None</span><br>
+                                <span class='ctip'>【 返回 】return:None</span><br>
                                 <b>【 使用 】var fouceObj={
                                         scale: 6,
                                         offset: {x:10, y:10},
@@ -521,7 +521,7 @@
                                     <span class="mrl80">animation:boolean/object  (animation为对象的时候{duration: Number,easingFunction: String}})</span><br>
                                     <span class="mrl80">}；</span>
                                 </span><br>
-                                <span class='cred'>【 返回 】return:None</span><br>
+                                <span class='ctip'>【 返回 】return:None</span><br>
                                 <b>【 使用 】var moveobj=
                                         {
                                             position: {x:100, y:100},
@@ -544,7 +544,7 @@
                             <b> releaseNode()</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】以编程方式释放焦点节点</span><br>
-                                <span class='cred'>【 返回 】return:None</span><br>
+                                <span class='ctip'>【 返回 】return:None</span><br>
                                 <b>【 使用 】network.releaseNode()</b> 
                             </p>
                         </Panel>
@@ -605,14 +605,14 @@
                             <b>enableEditMode()</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】以js启用编辑模式。与按下编辑按钮同样的效果(不起作用)</span><br>
-                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span class='ctip'>【 返回 】return:none</span><br>
                                 <b>【 使用 】network.enableEditMode()</b> </p>
                         </Panel>
                         <Panel name="2">
                             <b> disableEditMode()</b>
                             <div slot="content" class="f18">
                                 <span>【 描述 】以js关闭编辑模式。与按下工具栏右上角的 X 同样的效果</span><br>
-                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span class='ctip'>【 返回 】return:none</span><br>
                                 <b>【 使用 】network.disableEditMode()</b><br>
                                 <img src="./images/example/close.jpg" alt="">
                             </div>
@@ -622,7 +622,7 @@
                             <b> addNodeMode()</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】以js启用了添加节点的模式，类似与按下 addnode 按钮的效果；不需要在option中启用manipulation；直接点击画布，就会添加节点</span><br>
-                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span class='ctip'>【 返回 】return:none</span><br>
                                 <span>【 补充 】要退出此模式，请调用disableEditMode()（在没有启用manipulation，enabled设置为false的情况）。handlerFunctions中定义的回调函数仍然适用</span>
                                 <b>【 使用 】network.on("click", function (params) {network.addNodeMode();) => 点击两次，第一次是相当于点击按addnode 按钮，第二次是在页面点击添加节点;
                                     直接写在全局，点击一次就直接添加节点了
@@ -633,7 +633,7 @@
                             <b> editNode()</b>
                             <div slot="content" class="f18">
                                 <span>【 描述 】启用manipulation，enabled设置为true的情况，类似与按下编辑按钮的效果,出现图2</span><br>
-                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span class='ctip'>【 返回 】return:none</span><br>
                                 <b>【 使用 】network.editNode()</b> <br>
                                 图1：<img src="./images/example/edit.jpg" alt="图1"><br>
                                 图2：<img src="./images/example/edit2.jpg" alt="图2">
@@ -643,7 +643,7 @@
                             <b> addEdgeMode()</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】以js启用了添加边的模式，类似与按下 addedge 按钮的效果；不需要在option中启用manipulation；直接点击画布，从一个点到另一个点之间画线</span><br>
-                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span class='ctip'>【 返回 】return:none</span><br>
                                 <span>【 补充 】addNodeMode 同样适用与这里</span>
                                 <b>【 使用 】network.on("click", function (params) {network.addEdgeMode();) => 点击两次，第一次是相当于点击按addedge 按钮，第二次是在页面点击添加边;
                                     直接写在全局，点击一次就可以直接添加边了
@@ -654,7 +654,7 @@
                             <b> editEdgeMode()</b>
                             <div slot="content" class="f18">
                                 <span>【 描述 】以js启用了编辑边的模式，类似与按下 editedge 按钮的效果；</span><br>
-                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span class='ctip'>【 返回 】return:none</span><br>
                                 <b>【 使用 】network.editEdgeMode()</b> <br>
                                 <img src="./images/example/editedge.jpg" alt="编辑边"><br>
                                 <img src="./images/example/editedge2.jpg" alt="编辑边">
@@ -664,7 +664,7 @@
                             <b> deleteSelected()</b>
                             <p slot="content" class="f18">
                                 <span>【 描述 】删除选中，不需要启用编辑模式，一般放在其他函数中</span><br>
-                                <span class='cred'>【 返回 】return:none</span><br>
+                                <span class='ctip'>【 返回 】return:none</span><br>
                                 <b>【 使用 】network.on("click", function (params) {network.deleteSelected()}); 点击节点或者是边的时候，直接删除了点击选中的对象</b> </p>
                         </Panel>
                     </Collapse>

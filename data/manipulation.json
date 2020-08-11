@@ -18,7 +18,7 @@
         "type":"Boolean or Function",
         "default":"true",
         "desc":"为Boolean的时候，true和false表示【添加节点】按钮是否展示；为function的时候，自定义的添加节点",
-        "moredetail":"addNode：function（nodeData，callback）{<br><span class='mrl20'> var id='1234'//自定义id;</span><br><span class='mrl20'>var newObj={</span><br><span class='mrl40'> id:id, label:'I'm new!',x:nodeData.x,y:nodeData.y,group:1,level:1,value:24}(<b class='colorblack'>id必须，其他非必须</b>);</span><br><span class='mrl40'>nodes.add(newObj);(这里var nodes = new vis.DataSet(nodesArray);)</span><br><span class='mrl20'>}</span></br><span>}</span><br>这里注意要手动的给自己的node数组中push进去"
+        "moredetail":"addNode：function（nodeData，callback）{<br><span class='mrl20'> var id='1234'//自定义id;</span><br><span class='mrl20'>var newObj={</span><br><span class='mrl40'> id:id, label:'I'm new!',x:nodeData.x,y:nodeData.y,group:1,level:1,value:24}(<b class='cdefault'>id必须，其他非必须</b>);</span><br><span class='mrl40'>nodes.add(newObj);(这里var nodes = new vis.DataSet(nodesArray);)</span><br><span class='mrl20'>}</span></br><span>}</span><br>这里注意要手动的给自己的node数组中push进去"
     },
     {
         "name":"addEdge",

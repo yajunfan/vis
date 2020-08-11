@@ -14,7 +14,12 @@ const Example = function(resolve, reject) {
             methods: {
                 draw() {
                     var container = this.$refs.mynetwork;
-                    this.nodes.forEach(item=>{
+                    this.edges.forEach(item=>{
+                        if(item.label){
+                            item.font={
+                                color:"#bbb8b8"
+                            }
+                        }
                         item.size = 100;
                     })
                     var data = {
@@ -25,12 +30,13 @@ const Example = function(resolve, reject) {
                     var options = {
                      nodes:{
                          font:{
-                             size:40
+                             size:14,
+                             color:"#bbb8b8"
                          }
                      },
                       layout: {
                         hierarchical: {
-                            levelSeparation:800,
+                            levelSeparation:200,
                             nodeSpacing:340,
                           sortMethod: this.layoutMethod,
                         //   direction:"LR"
@@ -39,7 +45,11 @@ const Example = function(resolve, reject) {
                       edges: {
                         arrows: {to : true }
                       },
-                      physics:false,
+                      physics:{
+                        stabilization:{
+                            fit:false
+                        }
+                      },
                     };
                     var network = new vis.Network(container, data, options);
                     network.setSize("100%","900")

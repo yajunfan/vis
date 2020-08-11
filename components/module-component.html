@@ -5,24 +5,24 @@
         <Collapse  v-model="value">
             <Panel name="1">
                 <b> autoResize:true </b>
-                <p slot="content"><span class="cred">【boolean】自动调整：默认为true</span>。 如果为true，网络将自动检测其容器的大小调整，并相应地重绘自身。如果为false，
+                <p slot="content"><span class="ctip">【boolean】自动调整：默认为true</span>。 如果为true，网络将自动检测其容器的大小调整，并相应地重绘自身。如果为false，
                     则可以在使用函数redraw（）和setSize（）调整其容器大小后强制网络重新绘制</p>
             </Panel>
             <Panel name="2">
                 <b>height:'100%'</b>
-                <p slot="content"><span class="cred">【String】画布的高度</span>。 immediate可以是百分比或像素，一般在dom元素上设置</p>
+                <p slot="content"><span class="ctip">【String】画布的高度</span>。 immediate可以是百分比或像素，一般在dom元素上设置</p>
             </Panel>
             <Panel name="3">
                 <b>width:'100%'</b>
-                <p slot="content"><span class="cred">【String】画布的宽度</span>。 可以是百分比或像素，一般在dom元素上设置</p>
+                <p slot="content"><span class="ctip">【String】画布的宽度</span>。 可以是百分比或像素，一般在dom元素上设置</p>
             </Panel>
             <Panel name="4">
                 <b>locale:'en'</b> 
-                <p slot="content"><span class="cred">【String】语言设置。默认为en。</span></p>
+                <p slot="content"><span class="ctip">【String】语言设置。默认为en。</span></p>
             </Panel>
             <Panel name="5">
                 <b>locales:{}</b>
-                <p slot="content"><span class="cred">【Object】设置语言，默认有['en'(美式英语),'de'(德语),'es'(西班牙语),'it'(意大利),'nl'(英语),'pt-br'(葡萄牙语),'ru'(俄罗斯)]</span>
+                <p slot="content"><span class="ctip">【Object】设置语言，默认有['en'(美式英语),'de'(德语),'es'(西班牙语),'it'(意大利),'nl'(英语),'pt-br'(葡萄牙语),'ru'(俄罗斯)]</span>
                     <ul>
                     <li><br>
                             <div class="detail_box bddefault">
@@ -56,7 +56,7 @@
             </Panel>
             <Panel name="6">
                 <b>clickToUse:false</b> 
-                <div slot="content"><span class="cred">【boolean】默认是false；</span>它将仅在激活时对鼠标和触摸事件作出反应。激活时，network（dom元素盒子）周围会显示蓝色阴影边框。
+                <div slot="content"><span class="ctip">【boolean】默认是false；</span>它将仅在激活时对鼠标和触摸事件作出反应。激活时，network（dom元素盒子）周围会显示蓝色阴影边框。
                     通过单击将network设置为活动状态，然后通过单击网络外部或按ESC键再次将其更改为非活动状态。通过设置该属性，可以清晰的看到当前的network
                     是否是被激活状态，从而可以明晰事件是否可以执行（尤其是针对鼠标hover的事件，尤其明显）
                     <div class="example mrt10">
@@ -67,7 +67,7 @@
             <Panel name="7">
                 <b>configure:{}</b> 
                 <div slot="content">【Object】默认是<br>
-                        <div class="cred"> configure ：{ <br>
+                        <div class="ctip"> configure ：{ <br>
                             <span class="mrl20"> enabled ：true ，(打开或关闭配置界面。这是一个可选参数。如果未定义但定义了此对象的任何其他属性，则将其设置为true。)</span><br>
                             <span class="mrl20"> filter ：'nodes，edges' ，(可接受的值类型：字符串，数组，布尔值，函数)</span><br>
                             <span class="mrl20"> container ：undefined ，(允许将配置列表放在另一个HTML容器中，而不是放在network下面),这里接受dom元素，且为原生js获取的dom元素
@@ -89,7 +89,7 @@
             </Panel>
             <Panel name="8">
                 <b>edges:{}</b> 
-                <p slot="content"><span class="cred">【Object】边的配置</span>
+                <p slot="content"><span class="ctip">【Object】边的配置</span>
                     <Tabs value="name1" @on-click="getEdgeDetailFn">
                         <TabPane label="完整配置" name="name1">
                             <span>edges:{</span><br>

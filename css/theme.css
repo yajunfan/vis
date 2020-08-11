@@ -1,0 +1,56 @@
+.ivu-layout-sider{
+    background: linear-gradient(to top, black 0%,#10385B 20%,#2A637E 60%,#00314F  100%);
+  /* background: black; */
+  /* #10385B #2A637E #5F717B */
+}
+.ivu-menu-dark.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu), .ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu-title-active:not(.ivu-menu-submenu){
+    color:#2EBBC2;
+    border-right:3px solid #2EBBC2;
+}
+.ivu-menu-dark,.ivu-layout{
+    background: linear-gradient(to top, #2A637E 0%,#10385B 20%,#2A637E 60%,#00314F  100%);
+    color:#bbb8b8;
+    
+}
+.ivu-layout{
+    color:#bbb8b8;
+    background: linear-gradient(to top, black 0%,#10385B 20%,#2A637E 60%,#00314F  100%);
+}
+.ivu-collapse,.ivu-collapse-content,.ivu-table-wrapper,.ivu-table table{
+    /* background:#34495E; */
+    color:#bbb8b8;
+    background: linear-gradient(to top, black 0%,#10385B 20%,#2A637E 60%,#00314F 100%);
+}
+.ivu-collapse-content{
+    background: linear-gradient(to top,#10385B 0%,#2A637E 50%,#00314F 100%);
+}
+.ivu-table-expanded-cell{
+    background: linear-gradient(to top,#10385B 0%,#2A637E 50%,#00314F 100%);
+}
+td.ivu-table-expanded-cell{
+    color:#bbb8b8;
+    background: none;
+}
+
+.ivu-collapse>.ivu-collapse-item>.ivu-collapse-header,.ivu-tabs{
+    color:#bbb8b8;
+}
+.ivu-collapse{
+    border: none;
+}
+.ivu-collapse>.ivu-collapse-item{
+    border:none;
+    border-bottom: 1px solid #2b2d33;
+}
+.cdefault{
+    color:#bbb8b8;
+}
+.ctip{
+    color: #75C5E5;
+}
+.ivu-table-body,.ivu-table-row,.ivu-table td,tr.ivu-table-row-hover td,.ivu-table th {
+    background:#00314F;
+}
+.ivu-table td, .ivu-table th{
+    border-bottom: 1px solid #47484a;
+}

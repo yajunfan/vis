@@ -21,17 +21,17 @@ const Main = function(resolve, reject) {
                         {
                             id: 'method',
                             name: "全局方法",
-                            icon: "ivu-icon ivu-icon-ios-laptop"
+                            icon: "ivu-icon ivu-icon-ios-keypad"
                         },
                         {
                             id: 'eventlist',
                             name: "network事件",
-                            icon: "ivu-icon ivu-icon-ios-ionitron"
+                            icon: "ivu-icon ivu-icon-outlet"
                         },
                         {
                             id: 'example',
                             name: "红楼梦关系图",
-                            icon: "ivu-icon ivu-icon-ios-link"
+                            icon: "ivu-icon ivu-icon-ios-heart"
                         }
                     ]
                 }

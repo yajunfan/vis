@@ -18,7 +18,7 @@ const Module = function(resolve, reject) {
                                                 innerHTML:params.row.moredetail
                                             },
                                             style:{
-                                                color:"red",
+                                                color:"#75C5E5",
                                                 letterSpacing:"1px",
                                                 fontSize:"14px"
                                             }

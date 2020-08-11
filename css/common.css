@@ -3,7 +3,7 @@ html,body {
   font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
   overflow:auto;
   margin: 0px;
-  padding: 10px;
+  /* padding: 10px; */
   font-size: 14px;
 }
 h1,h2,h3,h4,h5{
@@ -127,4 +127,5 @@ span,i,b{
   height:900px;
   border: 1px solid lightgray;
 }
+
 
