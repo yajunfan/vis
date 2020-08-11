@@ -7,6 +7,13 @@
     color:#2EBBC2;
     border-right:3px solid #2EBBC2;
 }
+.ivu-menu-dark.ivu-menu-vertical .ivu-menu-item:hover, .ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu-title:hover,
+.ivu-menu-dark.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu), 
+.ivu-menu-dark.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu):hover, 
+.ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu-title-active:not(.ivu-menu-submenu), 
+.ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu-title-active:not(.ivu-menu-submenu):hover{
+    background: #00314F;
+}
 .ivu-menu-dark,.ivu-layout{
     background: linear-gradient(to top, #2A637E 0%,#10385B 20%,#2A637E 60%,#00314F  100%);
     color:#bbb8b8;
