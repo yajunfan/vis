@@ -1,4 +1,4 @@
-const DIR = "../../vis/images/hlm/";
+const DIR = "../images/hlm/";
 var data = {
     "nodes":[
         {"id": "jia", "label": "贾","level":0,"shape":"circularImage","image": DIR+"jia.jpg"},
@@ -13,7 +13,7 @@ var data = {
        
         {"id": "jiadaihua", "label": "贾代化","level":2,"shape":"circularImage","image": DIR+"wu.jpg"},
         {"id": "jiadaishan", "label": "贾代善","level":2,"shape":"circularImage","image": DIR+"wu.jpg"},
-        {"id": "shitaijun", "label": "史太君(贾母)","level":2,"shape":"circularImage","image": DIR+"jm.jpg"},
+        {"id": "shitaijun", "label": "史太君(贾母)","level":2,"shape":"image","image": DIR+"jm.jpg"},
         {"id": "shitaijunxiongdi", "label": "史湘云祖父","level":2,"shape":"circularImage","image": DIR+"wu.jpg"},
         {"id": "wangfu", "label": "王夫人父亲","level":2,"shape":"circularImage","image": DIR+"wu.jpg"},
         {"id": "linruhai", "label": "林如海","level":3,"shape":"circularImage","image": DIR+"lrh.jpg"},

@@ -33,12 +33,20 @@ const Example = function(resolve, reject) {
                              size:14,
                              color:"#bbb8b8"
                          }, 
+                         color:{
+                             border:"yellow",
+                             "highlight":{"border":"green"}
+                         },
+                         shapeProperties:{
+                            useBorderWithImage:true
+                         },
                      },
+                     
                       layout: {
                         hierarchical: {
                             levelSeparation:200,
                             nodeSpacing:340,
-                          sortMethod: this.layoutMethod,
+                            sortMethod: this.layoutMethod,
                         //   direction:"LR"
                         }
                       },
