@@ -1,4 +1,4 @@
-const DIR = "../../../images/hlm/";
+const DIR = "../../vis/images/hlm/";
 var data = {
     "nodes":[
         {"id": "jia", "label": "贾","level":0,"shape":"circularImage","image": DIR+"jia.jpg"},
