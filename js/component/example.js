@@ -1,4 +1,3 @@
-console.log(data)
 const Example = function(resolve, reject) {
     $.get('./components/example.html').then(function(res) { // 注意$.get(url)
         resolve({ // 这里是构造一个component
@@ -17,7 +16,8 @@ const Example = function(resolve, reject) {
                     this.edges.forEach(item=>{
                         if(item.label){
                             item.font={
-                                color:"#bbb8b8"
+                                color:"#bbb8b8",
+                                size:16
                             }
                         }
                         item.size = 100;
@@ -32,7 +32,7 @@ const Example = function(resolve, reject) {
                          font:{
                              size:14,
                              color:"#bbb8b8"
-                         }
+                         }, 
                      },
                       layout: {
                         hierarchical: {
@@ -43,7 +43,12 @@ const Example = function(resolve, reject) {
                         }
                       },
                       edges: {
-                        arrows: {to : true }
+                        arrows: {to : true },
+                        label:{
+                            font:{
+                                color:"red"
+                            }
+                        }
                       },
                       physics:{
                         stabilization:{
