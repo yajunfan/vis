@@ -1,4 +1,5 @@
-const DIR = "../images/hlm/";
+const DIR = "../../vis/images/hlm/"; //线上
+// const DIR = "../../images/hlm/"; 本地
 var data = {
     "nodes":[
         {"id": "jia", "label": "贾","level":0,"shape":"circularImage","image": DIR+"jia.jpg"},
