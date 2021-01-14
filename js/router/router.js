@@ -11,6 +11,7 @@ const routes = [
         { path: '/module',name:"module",component: Module },
         { path: '/method',name:"method",component: GlobalMethod },
         { path: '/eventlist',name:"eventlist",component: EventList },
+        { path: '/dataset',name:"dataset",component: Dataset },
         { path: '/example',name:"example",component: Example }
       ]    
     },

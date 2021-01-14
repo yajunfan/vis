@@ -29,6 +29,11 @@ const Main = function(resolve, reject) {
                             icon: "ivu-icon ivu-icon-outlet"
                         },
                         {
+                            id: 'dataset',
+                            name: "DataSet方法",
+                            icon: "ivu-icon ivu-icon-cube"
+                        },
+                        {
                             id: 'example',
                             name: "红楼梦关系图",
                             icon: "ivu-icon ivu-icon-ios-heart"

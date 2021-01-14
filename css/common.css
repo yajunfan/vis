@@ -127,5 +127,7 @@ span,i,b{
   height:900px;
   border: 1px solid lightgray;
 }
-
+.ivu-table table{
+  font-size: 14px;
+}
 

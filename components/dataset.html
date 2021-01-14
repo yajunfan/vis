@@ -1,0 +1,329 @@
+
+<div class="pd10">   
+    <div class="header">
+        <h2>DataSet</h2>
+        <p>
+            vis.js附带了一个灵活的数据集，可用于保存和操作非结构化数据，并侦听数据中的更改。数据集是基于key/value的。数据项可以从dataset中添加、更新和删除，
+            并且可以订阅数据集中的更改。可以对数据集中的数据进行筛选和排序，可以将字段(如日期)转换为特定类型。数据在添加到数据集时也可以被规范化。
+        </p> 
+        <h3 class="mrt10 ctip">主要包含以下几个内容</h3>   
+        <ul >
+            <li>1.Example</li>
+            <li>2.Construction</li>
+            <li>3.Methods</li>
+            <li>4.Properties</li>
+            <li>5.Subscriptions</li>
+            <li>6.Data Manipulation</li>
+            <li>7.Data Selection</li>
+        </ul>
+        
+    </div>
+    <Collapse  value="1" simple>
+        <Panel name="1">
+            Example
+            <div slot="content">
+                    <h4>例子中使用了add，remove 以及update的方法，之后详解</h4>
+                    <pre class="bddefault language-css">
+                        <code class="language-css language-js language-javascript language-xml">
+                            // create a DataSet
+                            var options = {};
+                            var data = new vis.DataSet(options);
+                            
+                            // add items
+                            // note that the data items can contain different properties and data formats
+                            data.add([
+                                {id: 1, text: 'item 1', date: new Date(2013, 6, 20), group: 1, first: true},
+                                {id: 2, text: 'item 2', date: '2013-06-23', group: 2},
+                                {id: 3, text: 'item 3', date: '2013-06-25', group: 2},
+                                {id: 4, text: 'item 4'}
+                            ]);
+                            
+                            // subscribe to any change in the DataSet
+                            data.on('*', function (event, properties, senderId) {
+                                console.log('event', event, properties);
+                            });
+                            
+                            // update an existing item
+                            data.updateOnly({id: 2, group: 1});
+                            
+                            // remove an item
+                            data.remove(4);
+                            
+                            // get all ids
+                            var ids = data.getIds();
+                            console.log('ids', ids);
+                            
+                            // get a specific item
+                            var item1 = data.get(1);
+                            console.log('item1', item1);
+                            
+                            // retrieve a filtered subset of the data
+                            var items = data.get({
+                                filter: function (item) {
+                                return item.group == 1;
+                                }
+                            });
+                            console.log('filtered items', items);
+                            
+                            // retrieve formatted items
+                            var items = data.get({
+                                fields: ['id', 'date'],
+                                type: {
+                                date: 'ISODate'
+                                }
+                            });
+                            console.log('formatted items', items);
+                        </code>
+                    </pre>    
+            </div>
+        </Panel>
+    </Collapse>
+    <Collapse >
+        <Panel name="1">
+            Construction
+            <div slot="content">
+                <h4>数据集可以构造为: var data = new vis.DataSet([data] [, options])</h4>
+                <div>
+                    <p>
+                            构造之后，可以使用 <b>add</b> 和 <b>updateOnly</b> 方法将数据添加到数据集，如数据操作部分中所述。<br>
+                            <span class="cred">参数【data】</span> 是可选的，是一个包含项的数组。<br>
+                            <span class="cred">参数【options】</span>是可选的，是一个可以包含以下属性的对象:<br>
+                    </p>
+                    <div>
+                        <Table :columns="column" :data="conData"></Table>    
+                    </div>  
+                </div> 
+            </div>
+        </Panel>
+    </Collapse>
+    <Collapse >
+        <Panel name="1">
+            Methods
+            <div slot="content">
+                <h4>DataSet包括以下的这些方法</h4>
+                <Table :columns="mColumn" :data="mData"></Table>    
+            </div>
+        </Panel>
+    </Collapse>
+    <Collapse >
+        <Panel name="1">
+            Subscriptions
+            <div slot="content">
+                <h4>订阅可以订阅DataSet中的更改。可以使用方法on创建订阅，也可以使用方法off删除订阅。</h4>
+                <pre class="bddefault language-css">
+                    <code class="language-js language-javascript language-xml">
+                        // create a DataSet
+                        var data = new vis.DataSet();
+                        
+                        // 订阅数据集中的所有更改 - *
+                        data.on('*', function (event, properties, senderId) {
+                            console.log('event:', event, 'properties:', properties, 'senderId:', senderId);
+                        });
+                        
+                        // 触发 add 事件
+                        data.add({ id: 1, text: "item 1 (new)" });
+                        
+                        // 触发 update 事件 - 仅仅是更新
+                        data.updateOnly({ id: 1, text: "item 1 (updated)" });
+                        
+                        // 再次触发 update 事件
+                        data.update({ id: 1, text: "item 1 (updated again)" });
+                        
+                        // 由于没有id为2的节点，实际触发的是 add 事件
+                        data.update({ id: 2, text: "item 2 (new)" });
+                        
+                        // 触发 update和add  事件，更新的节点没有的话，是触发add事件
+                        data.update(
+                            { id: 1, text: "item 1 (updated once more)" },
+                            { id: 3, text: "item 3 (new)" }
+                        );
+                        
+                        // 触发 remove 事件 - 移除id为1的节点
+                        data.remove(1);
+                    </code>
+                </pre>    
+            </div>
+        </Panel>
+    </Collapse>
+    <Collapse >
+        <Panel name="1">
+            ON && OFF
+            <div slot="content">
+                <h4>ON  订阅事件。</h4>
+                <pre class="bddefault language-css">
+                    <code class="language-js">DataSet.off(event, callback)</code>
+                </pre>    
+                <h4>OFF  取消订阅事件。</h4>
+                <pre class="bddefault language-css">
+                    <code class="language-js">DataSet.off(event, callback)</code>
+                </pre>  
+                <b>其中event和callback与 Subscriptions 的参数相对应。</b>  
+            </div>
+        </Panel>
+    </Collapse>
+    <Collapse >
+        <Panel name="1">
+            Events(订阅中的第一个参数- 事件名称)
+            <div slot="content">
+                <h4>以下事件可供订阅：</h4>
+                <div>
+                    <span class="cred">add : </span><span>添加一个项目或一组项目时，或者当一个项目在尚未存在时被更新时，会触发add事件。</span>
+                    
+                    <span class="cred">update</span><span>更新现有项或一组现有项时会触发更新事件。</span>
+                    <pre class="bddefault language-css">
+                            <code class="language-js">
+            var addedIds = DataSet.add(data [, senderId]) 
+            or
+            let node = new DataSet();
+            node.add(data [, senderId]);
+    
+            参数data
+            是Object： 包含要添加的单个项的对象。项目必须包含id 参考Subscriptions中
+            是Array：包含要添加项的列表的数组。每个项目必须包含一个id。参考Data Manipulation中
+            将项添加到数据集后，数据集将触发事件add。当提供senderId时，此id将与触发的事件一起传递给所有订阅服务器。
+            当已存在与任何添加项具有相同id的项时，该方法将引发错误。
+                            </code>
+                        </pre>
+                    <span class="cred">remove</span>
+                    <p>描述：移除一个或一组项目时会触发移除事件。</p>
+                    <span class="cred">*</span>
+                    <p>描述：*事件在任何事件add、update和remove发生时触发。</p>
+                </div>
+                <b>具体使用参考 <span class="cred">Subscriptions</span> </b>  
+            </div>
+        </Panel>
+    </Collapse>
+    <Collapse >
+        <Panel name="1">
+            Callback(订阅中的第二个参数- 回调函数)
+            <div slot="content">
+                <h4>订阅服务器的callback参数的详情列表：</h4>
+                <Table :columns="cbColumn" :data="cbData"></Table>    
+                <b>具体使用参考 <span class="cred">Subscriptions</span> </b>  
+            </div>
+        </Panel>
+    </Collapse>
+    <Collapse >
+        <Panel name="1">
+            Data Manipulation(数据操作)
+            <div slot="content">
+                <h4>DataSet中的数据可以使用add、updateOnly、update和remove方法进行操作。可以使用clear方法清空DataSet。</h4>
+                <pre class="bddefault language-css">
+                    <code class="language-js">
+                    // create a DataSet
+                    var data = new vis.DataSet();
+                    
+                    // add items
+                    data.add([
+                        {id: 1, text: 'item 1'},
+                        {id: 2, text: 'item 2'},
+                        {id: 3, text: 'item 3'}
+                    ]);
+                    
+                    // update an item
+                    data.updateOnly({id: 2, text: 'item 2 (updated)'});
+                    
+                    // remove an item
+                    data.remove(3);
+                    </code>
+                </pre> 
+            </div>
+        </Panel>
+    </Collapse>
+    <Collapse >
+        <Panel name="1">
+            ADD && UpdateOnly && Update (or add) && Remove
+            <div slot="content">
+                <h4>add</h4>
+                <pre class="bddefault language-css">
+                        <code class="language-js">
+        var addedIds = DataSet.add(data [, senderId]) 
+        or
+        let node = new DataSet();
+        node.add(data [, senderId]);
+
+        参数data
+        将项添加到数据集后，数据集将触发事件add。当提供senderId时，此id将与触发的事件一起传递给所有订阅服务器。
+        当已存在与任何添加项具有相同id的项时，该方法将引发错误。
+                        </code>
+                    </pre>   
+                <h4>UpdateOnly</h4>
+                <pre class="bddefault language-css">
+                        <code class="language-js">
+        var updatedIds = DataSet.updateOnly(data [, senderId])
+        or
+        let node = new DataSet();
+        node.updateOnly(data [, senderId]);
+
+        参数data
+        提供的属性将深入合并到现有项中。当项目不存在时，将引发异常。也可以通过指定删除符号来删除属性。
+        项目更新后，数据集将触发更新事件。当提供senderId时，此id将与触发的事件一起传递给所有订阅服务器。
+                        </code>
+                </pre>  
+                <h4>Update (or add)</h4>
+                <pre class="bddefault language-css">
+                        <code class="language-js">
+        存在更新的项，执行更新，不存在更新的项，触发创建项
+        var updatedIds = DataSet.update(data [, senderId])
+        or
+        let node = new DataSet();
+        node.update(data [, senderId]);
+
+        参数data
+        提供的属性将深入合并到现有项中。当项目不存在时，将引发异常。也可以通过指定删除符号来删除属性。
+        项目更新后，数据集将触发更新事件。当提供senderId时，此id将与触发的事件一起传递给所有订阅服务器。
+                        </code>
+                </pre>  
+                <h4>Remove</h4>
+                <pre class="bddefault language-css">
+                        <code class="language-js">
+        var removedIds = DataSet.remove(id [, senderId])
+        or
+        let node = new DataSet();
+        node.remove(id [, senderId]);
+        
+        参数id
+        包含要删除的单个项的id的数字或字符串。
+        包含要删除的项的对象。项目将按其id删除。
+        包含要删除的ID或项的数组。
+        该方法忽略对不存在项的删除，并返回一个数组，其中包含实际从数据集中删除的项的ID。
+        删除项之后，数据集将触发删除项的事件remove。当提供senderId时，此id将与触发的事件一起传递给所有订阅服务器。
+                    </code>
+                </pre>  
+                <h4>Clear</h4>
+                <pre class="bddefault language-css">
+                        <code class="language-js">
+        var removedIds = DataSet.clear([senderId])
+        or
+        let node = new DataSet();
+        node.clear();
+        
+        删除这些项后，数据集将为所有删除的项触发一个事件remove。当提供senderId时，此id将与触发的事件一起传递给所有订阅服务器。
+                    </code>
+                </pre>  
+                <b> add、updateOnly、update中的参数data<br>
+                    是Object： 包含要添加的单个项的对象。项目必须包含id 参考Subscriptions中<br>
+                    是Array：包含要添加项的列表的数组。每个项目必须包含一个id。参考Data Manipulation中</br>
+            </div>
+        </Panel>
+    </Collapse>
+    <Collapse >
+        <Panel name="1">
+            Data Selection(数据选择)
+            <div slot="content">
+                <h4>DataSet包含格式化、过滤和排序通过get、getIds、forEach和map方法检索的数据的功能。这些方法具有以下语法：</h4>
+                <pre class="bddefault language-css">
+                    <code class="language-js">
+            DataSet.get([id] [, options]);
+            DataSet.getIds([options]);
+            DataSet.forEach(callback [, options]);
+            DataSet.map(callback [, options]);
+                    </code>
+                </pre> 
+                <p>以下是option的详情配置</p>
+                <Table :columns="dsColumn" :data="dsData"></Table>    
+            </div>
+        </Panel>
+    </Collapse>
+</div>
+
