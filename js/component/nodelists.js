@@ -1,4 +1,5 @@
-const DIR = "../../vis/images/hlm/"; //线上
+console.log(window.location)
+const DIR =window.location.origin.includes("http://127.0.0.1")?"../../images/hlm/":"../../vis/images/hlm/"; //线上
 // const DIR = "../../images/hlm/"; 本地
 var data = {
     "nodes":[

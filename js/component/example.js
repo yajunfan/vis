@@ -52,10 +52,10 @@ const Example = function(resolve, reject) {
                       },
                       edges: {
                         arrows: {to : true },
-                        label:{
-                            font:{
-                                color:"red"
-                            }
+                        font:{
+                            color:"yellow",
+                            // background:"red",
+                            strokeColor:"blue"
                         }
                       },
                       physics:{
